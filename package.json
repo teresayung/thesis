@@ -1,0 +1,25 @@
+{
+  "name": "yesno",
+  "version": "0.1.0",
+  "description": "yes or no opinions",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YES-NO/thesis.git"
+  },
+  "keywords": [
+    "app",
+    "yes",
+    "no",
+    "opinion"
+  ],
+  "author": "yes no team",
+  "license": "ISC",
+  "bugs": {
+    "url": "waffle.io"
+  },
+  "homepage": "https://github.com/YES-NO/thesis.git"
+}
