@@ -17,6 +17,9 @@ angular.module('app.services', [])
       method: 'POST',
       url: route,
       data: data
+    })
+    .then(function (resp) {
+      return resp.data;
     });
   };
 
@@ -25,6 +28,7 @@ angular.module('app.services', [])
     post: post
   };
 })
+
 .factory('ServerRoutes', function(){
   //returns the objects of the routes
   return {
