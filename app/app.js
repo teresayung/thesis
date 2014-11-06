@@ -6,11 +6,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+//TODO List all the factory and controllers
 angular.module('Yesno', [
   'ionic', 
   'config', 
-  'Appeteyes.controllers', 
-  'Appeteyes.services'
+  // 'Appeteyes.controllers', 
+  // 'Appeteyes.services'
   ])
 
 .run(function($ionicPlatform,$rootScope, $state, Auth) {
@@ -27,6 +29,8 @@ angular.module('Yesno', [
 
 
   });
+
+  //TODO! Change the state for unauthenticated users
   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
       if (toState.authenticate && !Auth.isAuth()){
         // User isn’t authenticated
@@ -45,32 +49,25 @@ angular.module('Yesno', [
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+    //TODO Do we need this block?
     // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: 'templates/tabs.html',
-    })
+    // .state('tab', {
+    //   url: '/tab',
+    //   abstract: true,
+    //   templateUrl: 'templates/tabs.html',
+    // })
 
     // Each tab has its own nav history stack:
 
-    .state('tab.appeteyes', {
-      url: '/appeteyes',
+    .state('loading.yesno', {
+      url: '/loading',
       views: {
-        'tab-appeteyes': {
+        'view-loading': {
           templateUrl: 'templates/tab-appeteyes.html',
           controller: 'AppeteyesCtrl'
         }
       },
       authenticate:true
-      // // resolve:{
-      // //   Yelper:'Yelper',
-      // //   Pics:function(Yelper){
-      // //     console.log('YEAHHHHHHHHHHH');
-      // //     return Yelper.search().$promise;
-      // //   }
-      // },
-      // controller:'DashCtrl'
     })
 
     .state('tab.myFoodies', {
