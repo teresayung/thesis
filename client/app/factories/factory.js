@@ -34,7 +34,7 @@ angular.module('app.services', [])
   //return an object of the routes
   return {
     sendContent: 'someRoute',
-    getPendings: 'someRoute',
+    getPending: 'someRoute',
     sendVote: 'someRoute',
     getResults: 'someRoute'
   };
@@ -42,14 +42,14 @@ angular.module('app.services', [])
 
 .factory('Auth', function ($http, $location, $window) {
 
-  var signin = function (user) {
+  var login = function (user) {
     return $http({
       method: 'POST',
       url: '========add later===========',
       data: user
     })
-    .then(function (resp) {
-      return resp.data.token;
+    .then(function (response) {
+      return response.data.token;
     });
   };
 
@@ -59,8 +59,8 @@ angular.module('app.services', [])
       url: '========add later===========',
       data: user
     })
-    .then(function (resp) {
-      return resp.data.token;
+    .then(function (response) {
+      return response.data.token;
     });
   };
 
@@ -68,7 +68,7 @@ angular.module('app.services', [])
     return !!$window.localStorage.getItem('loggedIn');
   };
 
-  var signout = function () {
+  var logout = function () {
     $window.localStorage.removeItem('loggedIn');
     $location.path('/login');
   };
