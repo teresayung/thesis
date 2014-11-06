@@ -7,8 +7,8 @@ angular.module('app.services', [])
       method: 'GET',
       url: route
     })
-    .then(function (resp) {
-      return resp.data;
+    .then(function (response) {
+      return response.data;
     });
   };
 
@@ -19,8 +19,8 @@ angular.module('app.services', [])
       url: route,
       data: data
     })
-    .then(function (resp) {
-      return resp.data;
+    .then(function (response) {
+      return response.data;
     });
   };
 
