@@ -12,6 +12,7 @@ angular.module('app.services', [])
     });
   };
 
+  //make post request to the route with given data
   var post = function (data, route) {
     return $http({
       method: 'POST',
@@ -30,7 +31,7 @@ angular.module('app.services', [])
 })
 
 .factory('ServerRoutes', function(){
-  //returns the objects of the routes
+  //return an object of the routes
   return {
     getPendings: 'someRoute',
     sendVote: 'someRoute',
