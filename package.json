@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "express": "^4.9.8",
-    "q": "^1.0.1",
   },
   "devDependencies": {
     "grunt": "~0.4.1",
