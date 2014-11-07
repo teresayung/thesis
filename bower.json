@@ -9,6 +9,9 @@
     "Ben Sperry <ben@drifty.com>"
   ],
   "description": "Advanced HTML5 hybrid mobile app development framework.",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.13"
+  },
   "main": [
     "release/css/ionic.css",
     "release/fonts/*",
