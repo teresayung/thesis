@@ -9,16 +9,15 @@
 
 angular.module('App', [
   'ionic', 
-  'config',
   //Controllers
   'App.Home',
-  'App.Loading',
-  'App.Login',
-  'App.Pending',
-  'App.Receivers',
-  'App.Results',
-  'App.Settings',
-  'App.Signup',
+  // 'App.Loading',
+  // 'App.Login',
+  // 'App.Pending',
+  // 'App.Receivers',
+  // 'App.Results',
+  // 'App.Settings',
+  // 'App.Signup',
   //Factories
   'App.ServerRequests',
   'App.ServerRoutes',
@@ -70,10 +69,10 @@ angular.module('App', [
 
     // Each tab has its own nav history stack:
     .state('home.app', {
-      url: '/',
+      url: '/home',
       views: {
         'view-home': {
-          templateUrl: 'views/homeTemplate.html',
+          templateUrl: 'js/views/home/homeTemplate.html',
           controller: 'HomeController'
         }
       },
@@ -84,7 +83,7 @@ angular.module('App', [
       url: '/loading',
       views: {
         'view-loading': {
-          templateUrl: 'views/loadingTemplate.html',
+          templateUrl: 'js/views/loading/loadingTemplate.html',
           controller: 'LoadingController'
         }
       },
@@ -95,7 +94,7 @@ angular.module('App', [
       url: '/login',
       views: {
         'view-login': {
-          templateUrl: 'views/loginTemplate.html',
+          templateUrl: 'js/views/login/loginTemplate.html',
           controller: 'LoginController'
         }
       },
@@ -106,7 +105,7 @@ angular.module('App', [
       url: '/pending',
       views: {
         'view-pending': {
-          templateUrl: 'views/pendingTemplate.html',
+          templateUrl: 'js/views/pending/pendingTemplate.html',
           controller: 'PendingController'
         }
       },
@@ -117,7 +116,7 @@ angular.module('App', [
       url: '/receivers',
       views: {
         'view-receivers': {
-          templateUrl: 'views/receiversTemplate.html',
+          templateUrl: 'js/views/receivers/receiversTemplate.html',
           controller: 'ReceiversController'
         }
       },
@@ -128,7 +127,7 @@ angular.module('App', [
       url: '/results',
       views: {
         'view-results': {
-          templateUrl: 'views/resultsTemplate.html',
+          templateUrl: 'js/views/results/resultsTemplate.html',
           controller: 'ResultsController'
         }
       },
@@ -139,7 +138,7 @@ angular.module('App', [
       url: '/settings',
       views: {
         'view-settings': {
-          templateUrl: 'views/settingsTemplate.html',
+          templateUrl: 'js/views/settings/settingsTemplate.html',
           controller: 'SettingsController'
         }
       },
@@ -150,7 +149,7 @@ angular.module('App', [
       url: '/signup',
       views: {
         'view-signup': {
-          templateUrl: 'views/signupTemplate.html',
+          templateUrl: 'js/views/signup/signupTemplate.html',
           controller: 'SignupController'
         }
       },
