@@ -1,1 +1,38 @@
-pendingTemplate.html
+<style type="text/css">
+	.photo{
+		background-image: url(background.jpg);
+		position:relative;
+		height: 360px;
+		width: 400px;
+	}
+	.topic{
+		opacity: 0.5;
+		background-color: #fff;
+		width: 400px;
+		height: 50px;
+		text-align: center;
+		position:absolute; 
+		bottom:0;
+	}
+	.topic > span{
+		color: #000;
+		font-size: 30px;
+	}
+	.opButtons{
+		list-style: none;
+	}
+	.opButtons > li{
+		display: inline;
+	}
+</style>
+<div class="pendingContainer">
+	<div class="senderName">{{sender}}</div>
+	<div class="photo">
+		<div class="topic"><span>{{topic}}</span></div>
+	</div>
+	<ul class="opButtons">
+		<li><button ng-click="sendVote(contentId, -1)">NO</button></li>
+		<li><button ng-click="sendVote(contentId, 0)">SKIP</button></li>
+		<li><button ng-click="sendVote(contentId, 1)">YES</button></li>
+	</ul>
+</div>
