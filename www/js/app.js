@@ -13,7 +13,7 @@ angular.module('App', [
   'App.Home',
   // 'App.Loading',
   // 'App.Login',
-  // 'App.Pending',
+  'App.Pending',
   // 'App.Receivers',
   // 'App.Results',
   // 'App.Settings',
