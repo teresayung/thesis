@@ -7,10 +7,10 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-//TODO List all the factory and controllers
 angular.module('App', [
   'ionic', 
   'config',
+  //Controllers
   'App.Home',
   'App.Loading',
   'App.Login',
@@ -19,11 +19,10 @@ angular.module('App', [
   'App.Results',
   'App.Settings',
   'App.Signup',
+  //Factories
   'App.ServerRequests',
   'App.ServerRoutes',
   'App.Auth'
-  // 'Appeteyes.controllers', 
-  // 'Appeteyes.services'
   ])
 
 .run(function($ionicPlatform,$rootScope, $state, Auth) {
