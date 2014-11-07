@@ -10,7 +10,18 @@
 //TODO List all the factory and controllers
 angular.module('App', [
   'ionic', 
-  'config', 
+  'config',
+  'App.Home',
+  'App.Loading',
+  'App.Login',
+  'App.Pending',
+  'App.Receivers',
+  'App.Results',
+  'App.Settings',
+  'App.Signup',
+  'App.ServerRequests',
+  'App.ServerRoutes',
+  'App.Auth'
   // 'Appeteyes.controllers', 
   // 'Appeteyes.services'
   ])
