@@ -1,6 +1,8 @@
 angular.module('App.Pending', [])
 .controller('PendingController', function ($scope, $window, $location, ServerRequests, ServerRoutes, Auth) {
 	
+	//======================== initialize ==============================
+
 	// //if not loggedIn, send the user to logIn
 	// if(!Auth.loggedIn()){
 	// 	$location.path('/logIn');
@@ -34,7 +36,8 @@ angular.module('App.Pending', [])
 	};
 	getPendings();
 
-
+	//======================== click function ==============================
+	
   $scope.sendVote = function(vote){
   	var result = {
   		'contentId': contentId,
@@ -50,6 +53,8 @@ angular.module('App.Pending', [])
   	  	console.error(error);
   	  });
   };
+
+  //======================== helper functions ==============================
 
   var showContent = function(currentContent){
   	contentId = currentContent.contentId;
