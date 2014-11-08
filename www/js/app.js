@@ -22,6 +22,7 @@ angular.module('App', [
   'App.ServerRequests',
   'App.ServerRoutes',
   'App.Auth',
+  'App.Camera',
   'App.Directives'
   ])
 
@@ -50,8 +51,11 @@ angular.module('App', [
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($compileProvider, $stateProvider, $urlRouterProvider) {
 
+  //Retrieves and overwrites the default regexp that is used to whitelist safe urls during img sanitization
+  //Normalizes any url about to be used in img(src) and returns an absolute path
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
