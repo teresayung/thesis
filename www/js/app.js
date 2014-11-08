@@ -21,7 +21,8 @@ angular.module('App', [
   //Factories
   'App.ServerRequests',
   'App.ServerRoutes',
-  'App.Auth'
+  'App.Auth',
+  'App.Directives'
   ])
 
 .run(function($ionicPlatform,$rootScope, $state, Auth) {
@@ -104,12 +105,12 @@ angular.module('App', [
     .state('pending', {
       url: '/pending',
       views: {
-        'view-pending': {
+        '': {
           templateUrl: 'js/views/pending/pendingTemplate.html',
           controller: 'PendingController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('receivers', {
