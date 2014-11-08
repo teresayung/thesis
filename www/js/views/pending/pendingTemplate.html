@@ -1,38 +1,46 @@
 <style type="text/css">
-	.photo{
-		background-image: url(background.jpg);
+
+  .senderName{
+  	text-align: center;
+  	padding: 10px;
+		height: 34px;
+		font-size: 30px;
+  }
+
+	.pendingContent{
+		background-size: cover;
+		/*background-size: 100% auto;*/
 		position:relative;
 		height: 360px;
 		width: 400px;
 	}
-	.topic{
-		opacity: 0.5;
-		background-color: #fff;
-		width: 400px;
-		height: 50px;
+	
+	.polaroid-text{
 		text-align: center;
-		position:absolute; 
-		bottom:0;
+		font-size: 24px;
 	}
-	.topic > span{
-		color: #000;
-		font-size: 30px;
-	}
-	.opButtons{
-		list-style: none;
-	}
-	.opButtons > li{
-		display: inline;
-	}
+
 </style>
-<div class="pendingContainer">
-	<div class="senderName">{{sender}}</div>
-	<div class="photo">
-		<div class="topic"><span>{{topic}}</span></div>
-	</div>
-	<ul class="opButtons">
-		<li><button ng-click="sendVote(-1)">NO</button></li>
-		<li><button ng-click="sendVote(0)">SKIP</button></li>
-		<li><button ng-click="sendVote(1)">YES</button></li>
-	</ul>
-</div>
+<ion-view hide-nav-bar=true>
+	<ion-content>
+		<div class="pendingContainer" on-swipe-up="sendVote(0)">
+			<div class="senderName"><span>{{sender}}</span></div>
+			<div class="polaroid-pic pendingContent" set-background-image image="pictureUrl"></div>
+			<div class="bar-footer">
+				<div class="polaroid-text"><span>{{topic}}</span></div>
+			</div>
+		</div><!-- ================ CONTAINER-END ================-->
+	</ion-content>
+			
+	<!-- ================ FOTTER ================-->
+	<ion-footer-bar class="bar bar-footer bar-dark">
+		<!-- ================ BUTTONS for NO/SKIP/YES ================-->
+		<button class="button button-assertive" ng-click="sendVote(-1)">
+			<i class="icon ion-ios7-paw"></i>NO
+		</button>
+		<h1 class="title">swipe up to skip</h1>
+		<button class="button button-balanced pull-right" ng-click="sendVote(1)">
+			<i class="icon ion-ios7-paw"></i>YES
+		</button><!-- ================ BUTTONS for NO/SKIP/YES -END ================-->
+	</ion-footer-bar><!-- ================ FOTTER-END ================-->
+</ion-view>
