@@ -21,17 +21,19 @@ angular.module('App.Home', [])
   $scope.getPhoto = function() {
     Camera.getPicture()
       .then(function(imageURI) {
-        console.log(imageURI);
+        alert(imageURI);
         $scope.currentPhoto = imageURI;
-      }, function(err) {
-        console.err(err);
+      }, function(error) {
+        alert(error); 
       }, {
-      quality: 75,
-      targetWidth: 320,
-      targetHeight: 320,
-      saveToPhotoAlbum: false
+        quality: 75,
+        targetWidth: 320,
+        targetHeight: 320,
+        saveToPhotoAlbum: false
+        destinationType: navigator.camera.DestinationType.FILE_URI,
+        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
       });
-  } 
+  }
 
   $scope.send = function() {
     
