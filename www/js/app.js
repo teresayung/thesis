@@ -15,7 +15,7 @@ angular.module('App', [
   // 'App.Login',
   'App.Pending',
   // 'App.Receivers',
-  // 'App.Results',
+  'App.Results',
   // 'App.Settings',
   // 'App.Signup',
   //Factories
@@ -127,12 +127,12 @@ angular.module('App', [
     .state('results', {
       url: '/results',
       views: {
-        'view-results': {
+        '': {
           templateUrl: 'js/views/results/resultsTemplate.html',
           controller: 'ResultsController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('settings', {
