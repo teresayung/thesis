@@ -2,11 +2,15 @@ angular.module('App.Auth', [])
 
 .factory('Auth', function ($http, $location, $window) {
 
-  var login = function (user) {
+  var login = function (username, password) {
+    var userInfo = {
+      username: username,
+      password: password
+    };
     return $http({
       method: 'POST',
       url: '========add later===========',
-      data: user
+      data: userInfo
     })
     .then(function (response) {
       return response.data.token;
