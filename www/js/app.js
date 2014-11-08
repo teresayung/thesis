@@ -16,7 +16,7 @@ angular.module('App', [
   'App.Pending',
   // 'App.Receivers',
   'App.Results',
-  // 'App.Settings',
+  'App.Settings',
   // 'App.Signup',
   //Factories
   'App.ServerRequests',
@@ -138,12 +138,12 @@ angular.module('App', [
     .state('settings', {
       url: '/settings',
       views: {
-        'view-settings': {
+        '': {
           templateUrl: 'js/views/settings/settingsTemplate.html',
           controller: 'SettingsController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('signup', {

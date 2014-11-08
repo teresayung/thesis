@@ -17,6 +17,7 @@ angular.module('App.Results', [])
   // } else {
   //   //user is not logged in
   //   //route to login page
+       //$location.path('/login')
   // }
 
 
