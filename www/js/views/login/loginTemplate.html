@@ -1,1 +1,26 @@
-loginTemplate.html
+<ion-view>
+	<ion-content>
+		<div class="list">
+		  <label class="item item-input">
+		    <span class="input-label">Username</span>
+		    <input ng-model="usernameInput" type="text">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">Password</span>
+		    <input ng-model="passwordInput" type="password">
+		  </label>
+		  <label class="item">
+			  <button class="button button-block button-positive" ng-click="logIn(usernameInput, passwordInput)">
+			  	login
+			  </button>
+		  </label>
+	    <label class="item">
+	    	<span>Don't have an account?</span>
+	  	  <button class="button button-block button-calm" ng-click="signUp()">
+	  	  	signup
+	  	  </button>
+	    </label>
+		</div>
+
+	</ion-content>
+</ion-view>

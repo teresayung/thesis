@@ -12,7 +12,7 @@ angular.module('App', [
   //Controllers
   'App.Home',
   // 'App.Loading',
-  // 'App.Login',
+  'App.Login',
   'App.Pending',
   // 'App.Receivers',
   'App.Results',
@@ -94,12 +94,12 @@ angular.module('App', [
     .state('login', {
       url: '/login',
       views: {
-        'view-login': {
+        '': {
           templateUrl: 'js/views/login/loginTemplate.html',
           controller: 'LoginController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('pending', {
