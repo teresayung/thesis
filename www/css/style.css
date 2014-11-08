@@ -26,3 +26,7 @@
   border: none;
   /*border-left: 1px solid #000;*/
 }
+
+#myImage{
+  width: 100%;
+}

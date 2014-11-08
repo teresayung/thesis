@@ -3,10 +3,11 @@ angular.module('App.Home', [])
 //Retrieves and overwrites the default regexp that is used to whitelist safe urls during img sanitization
 //Normalizes any url about to be used in img(src) and returns an absolute path
 .config(function($compileProvider) {
-  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  $compileProvider
+    .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController',function($scope, $location, $Camera) {
+.controller('HomeController',function($scope, $location, Camera) {
   //sends to new routes when home page is swiped
   $scope.swiping = function(direction){
     if (direction === 'left'){
@@ -21,14 +22,20 @@ angular.module('App.Home', [])
   $scope.getPhoto = function() {
     Camera.getPicture()
       .then(function(imageURI) {
-        alert(imageURI);
-        $scope.currentPhoto = imageURI;
+        if (imageURI.substring(0,21)=="content://com.android") {
+          var photo_split=imageURI.split("%3A");
+          imageURI="content://media/external/images/media/"+photo_split[1];
+        };
+        window.resolveLocalFileSystemURI(imageURI, function(fileEntry) {
+            var image = document.getElementById('myImage');
+            image.src = fileEntry.nativeURL;
+          });
       }, function(error) {
         alert(error); 
       }, {
         quality: 75,
-        targetWidth: 320,
-        targetHeight: 320,
+        targetWidth: 100,
+        targetHeight: 100,
         saveToPhotoAlbum: false,
         destinationType: navigator.camera.DestinationType.FILE_URI,
         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
