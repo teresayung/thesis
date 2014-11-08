@@ -10,7 +10,9 @@ angular.module('App.Home', [])
       $location.path('/pending');
     }
   }
-  $scope.send = function
+  $scope.send = function(){
+    
+  }
 });
 
 ;
