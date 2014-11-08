@@ -55,6 +55,7 @@ module.exports = function(grunt) {
         files: [
           'www/js/*.js',
           'www/lib/**/*.js',
+          'www/**/.html'
         ],
         tasks: [
           'concat',
