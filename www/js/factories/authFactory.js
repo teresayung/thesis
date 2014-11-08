@@ -2,7 +2,7 @@ angular.module('App.Auth', [])
 
 .factory('Auth', function ($http, $location, $window) {
 
-  var login = function (username, password) {
+  var auth = function(username, password, route){
     var userInfo = {
       username: username,
       password: password
@@ -13,19 +13,18 @@ angular.module('App.Auth', [])
       data: userInfo
     })
     .then(function (response) {
-      return response.data.token;
+      $window.localStorage.setItem('loggedIn', true);
+      $window.localStorage.setItem('userId', response.data.userId); 
+      $window.localStorage.setItem('token', response.data.token);
     });
   };
+  
+  var login = function (username, password) {
+    return auth(username, password, 'route for login');
+  };
 
-  var signup = function (user) {
-    return $http({
-      method: 'POST',
-      url: '========add later===========',
-      data: user
-    })
-    .then(function (response) {
-      return response.data.token;
-    });
+  var signup = function (username, password) {
+    return auth(username, password, 'route for signup');
   };
 
   var loggedIn = function () {
