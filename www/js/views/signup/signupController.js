@@ -15,5 +15,4 @@ angular.module('App.Signup', [])
   		// 	console.error(error);
   		// })
   	}
-s
   });
