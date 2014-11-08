@@ -6,7 +6,7 @@ angular.module('App.Home', [])
   $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 })
 
-.controller('HomeController',function($scope, $location) {
+.controller('HomeController',function($scope, $location, $Camera) {
   //sends to new routes when home page is swiped
   $scope.swiping = function(direction){
     if (direction === 'left'){
