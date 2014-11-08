@@ -7,15 +7,14 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera) {
   //TODO Check if logged in and route accordingly
 
-  var userId = $window.localStorage.getItem('userId');
   //Holds the pic/text content that will be sent
   $scope.content = {
     topic: '',
     picture: '',
-    userId: userId
+    userId: 0
   }
 
   //sends to new routes when home page is swiped
@@ -27,11 +26,6 @@ angular.module('App.Home', [])
       $location.path('/friends');
     }
   }
-
-  //clicking the pending button routes to pendingView 
-  $scope.routeToPending = function(){
-    $location.path('/pending');
-  };
 
   //sends to receivers when Send button is pushed
   $scope.send = function(){
@@ -62,12 +56,5 @@ angular.module('App.Home', [])
         alert(error); 
       }, option);
   }
-
-  //check if there is any pending with the factory and set the count to pendingCount.
-  PendingFactory.countPending(userId)
-  .then(function(count){
-    $scope.pendingCount = count;
-  });
-  
 });
 
