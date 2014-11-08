@@ -17,7 +17,7 @@ angular.module('App', [
   // 'App.Receivers',
   'App.Results',
   'App.Settings',
-  // 'App.Signup',
+  'App.Signup',
   //Factories
   'App.ServerRequests',
   'App.ServerRoutes',
@@ -149,12 +149,12 @@ angular.module('App', [
     .state('signup', {
       url: '/signup',
       views: {
-        'view-signup': {
+        '': {
           templateUrl: 'js/views/signup/signupTemplate.html',
           controller: 'SignupController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
 

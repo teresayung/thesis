@@ -4,12 +4,10 @@ angular.module('App.Login', [])
 		$scope.passwordInput;
 
 		$scope.logIn = function(username, password){
-			$window.localStorage.setItem('loggedIn', true);
-			console.log('logging in with ', username, password);
 			// Auth.login(username, password)
 			//   .then(function(response){
-			//   	//after logging in, set the userId and route to home
-   //        $window.localStorage.setItem('userId', response.userId);
+			//   	//after logging in, route to home
+					console.log('login as ', username, password);
           $location.path('/');
 			//   })
 			//   .catch(function(error){

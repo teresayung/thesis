@@ -2,7 +2,10 @@ angular.module('App.Auth', [])
 
 .factory('Auth', function ($http, $location, $window) {
 
-  var login = function (username, password) {
+  //===================HELPER FUNCTION========================
+
+  var auth = function(username, password, route){
+    //make userInfo object with username and password and send it to the passed in route
     var userInfo = {
       username: username,
       password: password
@@ -13,19 +16,26 @@ angular.module('App.Auth', [])
       data: userInfo
     })
     .then(function (response) {
-      return response.data.token;
+      //expect respose to be an object with userId and token info.
+      //store loggedIn boolean, userId and token in local storage
+      $window.localStorage.setItem('loggedIn', true);
+      $window.localStorage.setItem('userId', response.data.userId); 
+      $window.localStorage.setItem('token', response.data.token);
+      return response.data;
+    })
+    //if error in the process, console it 
+    .catch(function(error){
+      console.error(error);
     });
   };
+  
+  //===================SERVICE FUNCTION========================
+  var login = function (username, password) {
+    return auth(username, password, 'route for login');
+  };
 
-  var signup = function (user) {
-    return $http({
-      method: 'POST',
-      url: '========add later===========',
-      data: user
-    })
-    .then(function (response) {
-      return response.data.token;
-    });
+  var signup = function (username, password) {
+    return auth(username, password, 'route for signup');
   };
 
   var loggedIn = function () {
