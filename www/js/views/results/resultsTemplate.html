@@ -1,1 +1,49 @@
-resultsTemplate.html
+<style type="text/css">
+.topic {
+  display: block;
+}
+.pictureframe{
+  display: inline;
+  float: left;
+}
+.votes {
+  display: inline;
+  float: left;
+}
+}
+</style>
+
+<!-- <button class="button icon ion-navicon"></button>
+  <h1 class="title">Header Buttons</h1>
+  <button class="button">Edit</button> -->
+
+
+<ion-view>
+
+<ion-nav-buttons side="left">
+  <button class="button icon ion-navicon">
+  </button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+  <button class="button icon ion-gear-a"></button>
+</ion-nav-buttons>
+
+  <ion-content>
+    <div class="resultsContainer" ng-controller="ResultsController">
+      <div class = "list"> 
+        <a ng-repeat="result in results" class="item item-thumbnail-left">
+          <h1 class="topic">{{result.topic}}</h1>
+          <div class="pictureframe">
+            <img class ="picture" style="height:auto; width:auto; max-width:300px; max-height:300px;" ng-src ="{{result.picture}}">
+          </div>
+          <div class="votes">
+            <h2 class="yes">Yes!{{result.yes}}</h2>
+            <h2 class="no"> No!{{result.no}}</h2> 
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
