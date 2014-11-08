@@ -7,7 +7,19 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, Camera) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth) {
+  //TODO Check if logged in and route accordingly
+
+  //Holds the pic/text content that will be sent
+  $scope.content = {
+    topic: '',
+    picture: 'some picture data',
+    userId: 0
+  }
+
+  $scope.addText = function(newText){
+    $scope.content.topic = newText;
+  }
 
   //sends to new routes when home page is swiped
   $scope.swiping = function(direction){
@@ -17,6 +29,16 @@ angular.module('App.Home', [])
     if (direction === 'right'){
       $location.path('/pending');
     }
+  }
+
+  //sends to receivers when Send button is pushed
+  $scope.send = function(){
+    //sends content to be stored in ReceiversFactory
+    ReceiversFactory.contentFromHome($scope.content);
+
+    //sends user to receiver route
+    $location.path('/receivers');
+
   }
 
   //calls the getPicture function from the factory allowing the user to upload/take pictures
@@ -42,10 +64,5 @@ angular.module('App.Home', [])
         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
       });
   }
-
-  $scope.send = function() {
-    
-  }
-
 });
 
