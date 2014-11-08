@@ -68,10 +68,10 @@ angular.module('App', [
     // })
 
     // Each tab has its own nav history stack:
-    .state('home.app', {
-      url: '/home',
+    .state('home', {
+      url: '/',
       views: {
-        'view-home': {
+        '': {
           templateUrl: 'js/views/home/homeTemplate.html',
           controller: 'HomeController'
         }
@@ -79,7 +79,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('loading.app', {
+    .state('loading', {
       url: '/loading',
       views: {
         'view-loading': {
@@ -90,7 +90,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('login.app', {
+    .state('login', {
       url: '/login',
       views: {
         'view-login': {
@@ -101,7 +101,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('pending.app', {
+    .state('pending', {
       url: '/pending',
       views: {
         'view-pending': {
@@ -112,7 +112,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('receivers.app', {
+    .state('receivers', {
       url: '/receivers',
       views: {
         'view-receivers': {
@@ -123,7 +123,7 @@ angular.module('App', [
       authenticate:true
     })
     
-    .state('results.app', {
+    .state('results', {
       url: '/results',
       views: {
         'view-results': {
@@ -134,7 +134,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('settings.app', {
+    .state('settings', {
       url: '/settings',
       views: {
         'view-settings': {
@@ -145,7 +145,7 @@ angular.module('App', [
       authenticate:true
     })
 
-    .state('signup.app', {
+    .state('signup', {
       url: '/signup',
       views: {
         'view-signup': {
