@@ -5,6 +5,7 @@ angular.module('App.Auth', [])
   //===================HELPER FUNCTION========================
 
   var auth = function(username, password, route){
+    //make userInfo object with username and password and send it to the passed in route
     var userInfo = {
       username: username,
       password: password
@@ -21,6 +22,10 @@ angular.module('App.Auth', [])
       $window.localStorage.setItem('userId', response.data.userId); 
       $window.localStorage.setItem('token', response.data.token);
       return response.data;
+    })
+    //if error in the process, console it 
+    .catch(function(error){
+      console.error(error);
     });
   };
   
