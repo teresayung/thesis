@@ -29,7 +29,7 @@ angular.module('App.Home', [])
         quality: 75,
         targetWidth: 320,
         targetHeight: 320,
-        saveToPhotoAlbum: false
+        saveToPhotoAlbum: false,
         destinationType: navigator.camera.DestinationType.FILE_URI,
         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
       });
@@ -39,5 +39,5 @@ angular.module('App.Home', [])
     
   }
 
-});S
+});
 
