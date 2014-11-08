@@ -33,7 +33,10 @@ angular.module('App.Auth', [])
   };
 
   var logout = function () {
-    $window.localStorage.removeItem('loggedIn');
+    console.log("am i logging out?")
+    //When logout button is clicked, set local storage object to be loggedIn = false and userId = undefined 
+    $window.localStorage.setItem('loggedIn', false);
+    $window.localStorage.setItem('userId', undefined);
     $location.path('/login');
   };
 
