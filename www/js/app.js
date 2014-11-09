@@ -12,7 +12,6 @@ angular.module('App', [
   //Controllers
   'App.Home',
   // 'App.Loading',
-<<<<<<< HEAD
   'App.Login',
   'App.Pending',
   'App.Receivers',
