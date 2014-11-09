@@ -11,7 +11,9 @@
     contains the text to be sent with a picture-->
     <div class="bar bar-footer bar-light polaroid-border">
       <label class="item item-input polaroid-text">
-        <input type="text" placeholder="Touch to add message...">
+        <input type="text" placeholder="Touch to add message..."
+               ng-model="homeText"
+               ng-change="addText(homeText)">
       </label>
     </div>
   </ion-content>
