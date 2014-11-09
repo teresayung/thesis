@@ -31,6 +31,9 @@
   /*border-left: 1px solid #000;*/
 }
 
+#myImage{
+  width: 100%;
+}
 
 /*============FOR PENDING VIEW TEMPLATE=============*/
 
@@ -48,4 +51,5 @@
 .polaroid-text{
   text-align: center;
   font-size: 24px;
+
 }
