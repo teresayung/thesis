@@ -1,5 +1,5 @@
 angular.module('App.Directives', [])
-  .directive('setBackgroundImage', function(){
+  .directive('setImage', function(){
   	return {
   		restrict: 'A',
   		scope: {
@@ -7,7 +7,7 @@ angular.module('App.Directives', [])
   		},
   		link: function(scope, element, attributes){
   			scope.$watch('image', function(newVal, oldVal){
-  				element.css('background-image', 'url(' + scope.image + ')');
+          element.attr("src", scope.image);
   			})
   		}
   	}
