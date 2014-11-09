@@ -8,11 +8,11 @@
   }
 
 	.pendingContent{
-		background-size: cover;
-		/*background-size: 100% auto;*/
-		position:relative;
-		height: 360px;
-		width: 400px;
+		background-color: white;
+	}
+
+	.polaroid-pic > img{
+		width: 100%;
 	}
 	
 	.polaroid-text{
@@ -25,7 +25,9 @@
 	<ion-content>
 		<div class="pendingContainer" on-swipe-up="sendVote(0)">
 			<div class="senderName"><span>{{sender}}</span></div>
-			<div class="polaroid-pic pendingContent" set-background-image image="pictureUrl"></div>
+			<div class="polaroid-pic pendingContent" >
+				<img set-image image="pictureUrl">
+			</div>
 			<div class="bar-footer">
 				<div class="polaroid-text"><span>{{topic}}</span></div>
 			</div>
