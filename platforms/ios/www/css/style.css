@@ -1,1 +1,55 @@
 /* Empty. Add your own CSS if you like */
+
+.shutter{
+  font-size: 40px;
+  color: #aaa;
+}
+
+.polaroid-border{
+ /* width: auto;
+  background-color: orange;*/
+  border: none;
+}
+
+.polaroid-pic{
+  margin: 8px;
+  /*margin-bottom: 1300px;*/
+  background-color: #000;
+  height: 100%;
+}
+
+.polaroid-pic > img{
+  width: 100%;
+}
+
+.polaroid-text{
+  margin: 0 2px;
+  width: 100%;
+  /*background-color: purple;*/
+  /*width: 20px;*/
+  border: none;
+  /*border-left: 1px solid #000;*/
+}
+
+#myImage{
+  width: 100%;
+}
+
+/*============FOR PENDING VIEW TEMPLATE=============*/
+
+.senderName{
+  text-align: center;
+  padding: 10px;
+  height: 34px;
+  font-size: 30px;
+}
+
+.pendingContent{
+  background-color: white;
+}
+
+.polaroid-text{
+  text-align: center;
+  font-size: 24px;
+
+}
