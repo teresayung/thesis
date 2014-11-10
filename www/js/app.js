@@ -23,7 +23,7 @@ angular.module('App', [
   'App.ServerRoutes',
   'App.Auth',
   'App.Camera',
-  'App.Directives'
+  'App.Directives',
   'App.ReceiversFactory'
   ])
 
