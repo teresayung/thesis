@@ -14,7 +14,7 @@ angular.module('App', [
   // 'App.Loading',
   'App.Login',
   'App.Pending',
-  // 'App.Receivers',
+  'App.Receivers',
   'App.Results',
   'App.Settings',
   'App.Signup',
@@ -23,7 +23,8 @@ angular.module('App', [
   'App.ServerRoutes',
   'App.Auth',
   'App.Camera',
-  'App.Directives'
+  'App.Directives',
+  'App.ReceiversFactory'
 ])
 
 .run(function($ionicPlatform,$rootScope, $state, Auth) {
@@ -120,7 +121,7 @@ angular.module('App', [
     .state('receivers', {
       url: '/receivers',
       views: {
-        'view-receivers': {
+        '': {
           templateUrl: 'js/views/receivers/receiversTemplate.html',
           controller: 'ReceiversController'
         }
