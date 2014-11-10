@@ -7,7 +7,7 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera) {
   //TODO Check if logged in and route accordingly
 
   //Holds the pic/text content that will be sent
