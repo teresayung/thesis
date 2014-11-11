@@ -1,7 +1,23 @@
 describe('Module should exist', function() {
+  //Load the module with ResultsController
+  beforeEach(module('App'));
 
-  it('Module should exist', function() {
-      expect(true).toBe(true)
+  var controller, scope;
+  //inject the $controller and $rootScope services in eacj beforeEach block
+  beforeEach(inject(function ($controller, $rootScope){
+    //Create a new scope that's a child of the $rootScope
+    scope = $rootScope.$new();
+    //Create the controller
+    controller = $controller('ResultsController', {
+      $scope: scope
+    });
+
+    //** now we have access to both the controller as well as the scope of the ResultsController
+  }));
+
+
+  it('Results should be an object', function() {
+      expect(scope.results).toEqual(jasmine.any(Function))
   });
 
   // it('Controller should exist', function() {
