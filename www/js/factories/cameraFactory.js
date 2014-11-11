@@ -27,7 +27,6 @@ angular.module('App.Camera', [])
     getPicture: function(option) {
       var q = $q.defer();
       navigator.camera.getPicture(function(result) {
-        console.log(result);
         q.resolve(result);
       }, function(err) {
         q.reject(err);
