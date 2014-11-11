@@ -15,7 +15,7 @@ angular.module('App.Camera', [])
     sourceType: 0
   };
 
-  var options = function(value) {
+  var cameraOptions = function(value) {
   	if (value === 'takePicture') {
     		return takePicture;
     } else if (value === 'uploadPicture') {
@@ -31,7 +31,7 @@ angular.module('App.Camera', [])
         q.resolve(result);
       }, function(err) {
         q.reject(err);
-      }, options(option)
+      }, cameraOptions(option)
       );
       return q.promise;
     }
