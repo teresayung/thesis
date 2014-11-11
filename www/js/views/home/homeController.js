@@ -41,28 +41,36 @@ angular.module('App.Home', [])
 
   }
 
+  // $scope.takePicture = {
+  //   quality: 100,
+  //   saveToPhotoAlbum: false,
+  //   destinationType: 0
+  // }
+
+  // $scope.uploadPicture = {
+  //   quality: 100,
+  //   saveToPhotoAlbum: false,
+  //   destinationType: 0,
+  //   sourceType: 0
+  // }
+
   //calls the getPicture function from the factory allowing the user to upload/take pictures
-  $scope.getPhoto = function() {
-    Camera.getPicture()
-      .then(function(imageURI) {
-        if (imageURI.substring(0,21)=="content://com.android") {
-          var photo_split=imageURI.split("%3A");
-          imageURI="content://media/external/images/media/"+photo_split[1];
-        };
-        window.resolveLocalFileSystemURI(imageURI, function(fileEntry) {
-            var image = document.getElementById('myImage');
-            image.src = fileEntry.nativeURL;
-          });
+  $scope.getPhoto = function(option) {
+    Camera.getPicture(option)
+      .then(function(imageData) {
+        // if (imageURI.substring(0,21)=="content://com.android") {
+        //   var photo_split=imageURI.split("%3A");
+        //   imageURI="content://media/external/images/media/"+photo_split[1];
+        // };
+        // window.resolveLocalFileSystemURI(imageURI, function(fileEntry) {
+        //     var image = document.getElementById('myImage');
+        //     image.src = fileEntry.nativeURL;
+        //   });
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
       }, function(error) {
         alert(error); 
-      }, {
-        quality: 75,
-        targetWidth: 100,
-        targetHeight: 100,
-        saveToPhotoAlbum: false,
-        destinationType: navigator.camera.DestinationType.FILE_URI,
-        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-      });
+      }, option);
   }
 });
 
