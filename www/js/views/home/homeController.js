@@ -13,12 +13,8 @@ angular.module('App.Home', [])
   //Holds the pic/text content that will be sent
   $scope.content = {
     topic: '',
-    picture: 'some picture data',
+    picture: '',
     userId: 0
-  }
-
-  $scope.addText = function(newText){
-    $scope.content.topic = newText;
   }
 
   //sends to new routes when home page is swiped
@@ -33,12 +29,21 @@ angular.module('App.Home', [])
 
   //sends to receivers when Send button is pushed
   $scope.send = function(){
-    //sends content to be stored in ReceiversFactory
-    ReceiversFactory.contentFromHome($scope.content);
+    //if there is no picture and no message, do nothing
+    if ($scope.content.topic === '' && $scope.content.picture  === ''){
+      return;
+    }
+    else {
+      //sends content to be stored in ReceiversFactory
+      ReceiversFactory.contentFromHome($scope.content);
+      //sends user to receiver route
+      $location.path('/receivers');
+    }
+  }
 
-    //sends user to receiver route
-    $location.path('/receivers');
-
+  //dynamically updates the content object's topic property as text is changed
+  $scope.addText = function(newText){
+    $scope.content.topic = newText;
   }
 
   //calls the getPicture function from the factory allowing the user to upload/take pictures
