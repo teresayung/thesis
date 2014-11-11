@@ -12,14 +12,11 @@
 }
 
 .polaroid-border{
- /* width: auto;
-  background-color: orange;*/
   border: none;
   padding: 8px;
 }
 
 .polaroid-pic{
- /* margin: 8px;*/
   background-color: #000;
   width: 100%;
   height: 100%;
@@ -37,13 +34,9 @@
 }
 
 .polaroid-text{
-  /*margin: 0 2px ;*/
   width: 100%;
-  /*background-color: purple;*/
-  /*width: 20px;*/
   border: none;
   padding: 4px 0 4px 6px;
-  /*border-left: 1px solid #000;*/
 }
 
 #myImage{
