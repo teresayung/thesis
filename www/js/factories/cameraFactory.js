@@ -2,7 +2,7 @@ angular.module('App.Camera', [])
 
 .factory('Camera', function ($q) {
 
-	var takePicture = {
+  var takePicture = {
     quality: 100,
     saveToPhotoAlbum: false,
     destinationType: 0
