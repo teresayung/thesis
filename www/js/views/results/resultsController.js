@@ -2,6 +2,7 @@
 
 angular.module('App.Results', [])
 
+//when minify to deploy, want to write controller with [] syntax to "protect" them
 .controller('ResultsController', function($scope, $window, $location, Auth, ServerRequests, ServerRoutes){ //Auth, ServerRequests, ServerRoutes are factories
   
   console.log("are you in controller?")
