@@ -13,7 +13,6 @@ angular.module('App.ReceiversFactory', [])
     },
     //add an array of receivers to the sendContent object
     addReceivers: function(receivers){
-      console.log('add receivers is called')
       sendContent.receivers = receivers;
       sendContent.content = homeContent;
       return sendContent;

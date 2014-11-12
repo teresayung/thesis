@@ -61,3 +61,10 @@
   font-size: 24px;
 
 }
+
+/*============FOR RECEIVERS VIEW TEMPLATE=============*/
+.selected {
+  background-color: #000;
+  color: #fff;
+}
+

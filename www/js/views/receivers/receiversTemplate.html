@@ -3,7 +3,9 @@
     <!--sets up the main div where the camera image will reside
     is swipable to bring to bring to pending(swiperight) and results(swipeleft) -->
     <ion-list>
-      <ion-item ng-repeat="receiver in allReceivers">
+      <ion-item ng-repeat="receiver in allReceivers"
+                ng-class="{selected: isSelected(receiver)}"
+                ng-click="select(receiver)">
           {{receiver.name}}
       </ion-item>
     </ion-list>
