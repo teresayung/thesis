@@ -12,7 +12,7 @@ module.exports = function(config){
     //angular lib. ui-router, mocks,
 
     //Exclude - array of files or patterns to exclude, karma.conf.hs typically gets excluded if it is in your file pathway
-    exclude: ['www/lib/ionic/**.js'],
+    exclude: ['www/lib/**/**.min.js'],
 
     //Port- web server port
     port: 8080, //*** IS THIS NECESSARY WHEN WE USE IONIC SERVE??
