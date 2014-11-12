@@ -50,8 +50,8 @@ angular.module('App.Home', [])
   $scope.getPhoto = function(option) {
     Camera.getPicture(option)
       .then(function(imageData) {
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        $scope.content.picture = "data:image/jpeg;base64," + imageData;
+        document.getElementById('myImage').src = $scope.content.picture;
       }, function(error) {
         alert(error); 
       }, option);
