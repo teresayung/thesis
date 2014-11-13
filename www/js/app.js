@@ -12,19 +12,22 @@ angular.module('App', [
   //Controllers
   'App.Home',
   // 'App.Loading',
-  // 'App.Login',
-  // 'App.Pending',
-  // 'App.Receivers',
-  // 'App.Results',
-  // 'App.Settings',
-  // 'App.Signup',
+  'App.Login',
+  'App.Pending',
+  'App.Receivers',
+  'App.Results',
+  'App.Settings',
+  'App.Signup',
   //Factories
   'App.ServerRequests',
   'App.ServerRoutes',
-  'App.Auth'
-  ])
+  'App.Auth',
+  'App.Camera',
+  'App.Directives',
+  'App.ReceiversFactory'
+])
 
-.run(function($ionicPlatform,$rootScope, $state, Auth) {
+.run(function($ionicPlatform, $rootScope, $state, Auth) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -49,8 +52,11 @@ angular.module('App', [
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($compileProvider, $stateProvider, $urlRouterProvider) {
 
+  //Retrieves and overwrites the default regexp that is used to whitelist safe urls during img sanitization
+  //Normalizes any url about to be used in img(src) and returns an absolute path
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -93,29 +99,29 @@ angular.module('App', [
     .state('login', {
       url: '/login',
       views: {
-        'view-login': {
+        '': {
           templateUrl: 'js/views/login/loginTemplate.html',
           controller: 'LoginController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('pending', {
       url: '/pending',
       views: {
-        'view-pending': {
+        '': {
           templateUrl: 'js/views/pending/pendingTemplate.html',
           controller: 'PendingController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('receivers', {
       url: '/receivers',
       views: {
-        'view-receivers': {
+        '': {
           templateUrl: 'js/views/receivers/receiversTemplate.html',
           controller: 'ReceiversController'
         }
@@ -126,34 +132,34 @@ angular.module('App', [
     .state('results', {
       url: '/results',
       views: {
-        'view-results': {
+        '': {
           templateUrl: 'js/views/results/resultsTemplate.html',
           controller: 'ResultsController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('settings', {
       url: '/settings',
       views: {
-        'view-settings': {
+        '': {
           templateUrl: 'js/views/settings/settingsTemplate.html',
           controller: 'SettingsController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
     .state('signup', {
       url: '/signup',
       views: {
-        'view-signup': {
+        '': {
           templateUrl: 'js/views/signup/signupTemplate.html',
           controller: 'SignupController'
         }
       },
-      authenticate:true
+      // authenticate:true
     })
 
 

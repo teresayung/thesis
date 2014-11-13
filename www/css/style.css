@@ -5,24 +5,66 @@
   color: #aaa;
 }
 
+.polaroid-container{
+  background-color: #fff;
+  height: 100%;
+  padding: 8px;
+}
+
 .polaroid-border{
- /* width: auto;
-  background-color: orange;*/
   border: none;
+  padding: 8px;
 }
 
 .polaroid-pic{
-  margin: 8px;
-  /*margin-bottom: 1300px;*/
   background-color: #000;
+  width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.polaroid-pic > img{
+  width: 100%;
 }
 
 .polaroid-text{
-  margin: 0 2px;
   width: 100%;
-  /*background-color: purple;*/
-  /*width: 20px;*/
   border: none;
-  /*border-left: 1px solid #000;*/
+  padding: 4px 0 4px 6px;
 }
+
+*:focus{
+    outline-style: none;
+    outline: none;
+}
+
+#myImage{
+  width: 100%;
+}
+
+/*============FOR PENDING VIEW TEMPLATE=============*/
+
+.senderName{
+  text-align: center;
+  padding: 10px;
+  height: 34px;
+  font-size: 30px;
+}
+
+.pendingContent{
+  background-color: white;
+}
+
+.polaroid-text{
+  text-align: center;
+  font-size: 24px;
+
+}
+
+/*============FOR RECEIVERS VIEW TEMPLATE=============*/
+.selected {
+  background-color: #000;
+  color: #fff;
+}
+
