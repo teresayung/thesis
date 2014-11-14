@@ -93,6 +93,7 @@ angular.module('App.Pending', [])
 
   $scope.sendVote = function(vote){
   	var result = {
+  		'userId': userId,
   		'contentId': contentId,
   		'vote': vote
   	};
