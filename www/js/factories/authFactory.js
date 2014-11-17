@@ -34,8 +34,8 @@ angular.module('App.Auth', [])
         }else{
           //if there is no error, store information in the local storage.
           $window.localStorage.setItem('loggedIn', true);
-          $window.localStorage.setItem('userId', response.data.userId); 
-          $window.localStorage.setItem('token', response.data.token);
+          $window.localStorage.setItem('userId', response.userId); 
+          $window.localStorage.setItem('token', response.token);
         }
       })
       .catch(function(error){
@@ -43,7 +43,7 @@ angular.module('App.Auth', [])
       });
   };
 
-  var signup = function (username, password) {
+  var signup = function (username, password, email) {
     var userInfo = {
       username: username,
       password: password,
@@ -58,8 +58,8 @@ angular.module('App.Auth', [])
         }else{
           //if there is no error, store information in the local storage.
           $window.localStorage.setItem('loggedIn', true);
-          $window.localStorage.setItem('userId', response.data.userId); 
-          $window.localStorage.setItem('token', response.data.token);
+          $window.localStorage.setItem('userId', response.userId); 
+          $window.localStorage.setItem('token', response.token);
         }
       })
       .catch(function(error){
