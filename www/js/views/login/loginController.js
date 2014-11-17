@@ -6,23 +6,21 @@ angular.module('App.Login', [])
 
 		$scope.logIn = function(username, password){
 			Auth.login(username, password)
-			  .then(function(response){
-			  	if(response.error){
+			  .then(function(error){
+			  	if(error){
+				  	//if there is an error message from the server, show it to the user
 			  		$scope.showLoginError = true;
-			  		$scope.loginError = response.error;
+			  		$scope.loginError = error;
 			  	}else{
-				  	//after logging in, route to home
+				  	//if there is no error, route to home
 						console.log('login as ', username, password);
 	          $location.path('/');
 			  	}
-			  })
-			  .catch(function(error){
-			  	console.error(error);
 			  });
-		}
+		};
 
 		$scope.signUp = function(){
 			$location.path('/signup');
-		}
+		};
 			
 	});
