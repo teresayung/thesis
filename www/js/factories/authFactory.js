@@ -48,6 +48,7 @@ angular.module('App.Auth', [])
     //When logout button is clicked, set local storage object to be loggedIn = false and userId = undefined 
     $window.localStorage.setItem('loggedIn', false);
     $window.localStorage.setItem('userId', undefined);
+    $window.localStorage.setItem('token', undefined);
     $location.path('/login');
   };
 
