@@ -6,9 +6,14 @@
     </h1>
   </ion-nav-bar>
   <ion-content>
-    <form name="signupForm" novalidate ng-submit="signUp(usernameInput, passwordInput)">
+    <form name="signupForm" novalidate ng-submit="signUp(usernameInput, passwordInput, emailInput)">
       <div class="list">
 <!-- Username input and validation -->
+        <div class="error-container" ng-show="showSignupError">
+          <small class="error">
+            {{signupError}}
+          </small>
+        </div>
         <label class="item item-input">
           <i class="icon ion-person"></i>
           <span class="input-label">Username</span>

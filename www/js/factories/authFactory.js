@@ -4,23 +4,13 @@ angular.module('App.Auth', [])
 
   //===================HELPER FUNCTION========================
 
-  var auth = function(username, password, route){
-    //make userInfo object with username and password and send it to the passed in route
-    var userInfo = {
-      username: username,
-      password: password
-    };
+  var auth = function(userInfo, route){
     return $http({
       method: 'POST',
       url: route,
       data: userInfo
     })
     .then(function (response) {
-      //expect respose to be an object with userId and token info.
-      //store loggedIn boolean, userId and token in local storage
-      $window.localStorage.setItem('loggedIn', true);
-      $window.localStorage.setItem('userId', response.data.userId); 
-      $window.localStorage.setItem('token', response.data.token);
       return response.data;
     })
     //if error in the process, console it 
@@ -31,13 +21,50 @@ angular.module('App.Auth', [])
   
   //===================SERVICE FUNCTION========================
   var login = function (username, password) {
+    var userInfo = {
+      username: username,
+      password: password
+    };
     //change the routes once our server is deployed.
-    return auth(username, password, '/user/login');
+    return auth(userInfo, '/user/login')
+      .then(function(response){
+        if(response.error){
+          //if there is an error property in the response, return the error
+          return response.error;
+        }else{
+          //if there is no error, store information in the local storage.
+          $window.localStorage.setItem('loggedIn', true);
+          $window.localStorage.setItem('userId', response.userId); 
+          $window.localStorage.setItem('token', response.token);
+        }
+      })
+      .catch(function(error){
+        console.log(error);
+      });
   };
 
-  var signup = function (username, password) {
+  var signup = function (username, password, email) {
+    var userInfo = {
+      username: username,
+      password: password,
+      email: email
+    };
     //change the routes once our server is deployed.
-    return auth(username, password, '/user/signup');
+    return auth(userInfo, '/user/signup')
+      .then(function(response){
+        //if there is an error property in the response, return the error
+        if(response.error){
+          return response.error;
+        }else{
+          //if there is no error, store information in the local storage.
+          $window.localStorage.setItem('loggedIn', true);
+          $window.localStorage.setItem('userId', response.userId); 
+          $window.localStorage.setItem('token', response.token);
+        }
+      })
+      .catch(function(error){
+        console.log(error);
+      });
   };
 
   var loggedIn = function () {

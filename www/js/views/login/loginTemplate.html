@@ -8,6 +8,11 @@
   <ion-content>
     <form name="loginForm" novalidate ng-submit="logIn(usernameInput, passwordInput)">
       <div class="list">
+        <div class="error-container" ng-show="showLoginError">
+          <small class="error">
+            {{loginError}}
+          </small>
+        </div>
         <label class="item item-input">
           <i class="icon ion-person"></i>
           <input ng-model="usernameInput" name="username" placeholder=" Username" type="text" required>
