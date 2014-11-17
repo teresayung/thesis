@@ -9,7 +9,6 @@ angular.module('App.ServerRoutes', [])
     sendVote: '/pending/sendVote',
     getResults: '/results/getResults',
     getReceivers: '/receivers/getContacts',
-    postContent: '/receivers/sendContent',
-    logout: '/user/logout'
+    postContent: '/receivers/sendContent'
   };
 });
