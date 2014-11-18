@@ -7,7 +7,7 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, Pending) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory) {
   //TODO Check if logged in and route accordingly
 
   //Holds the pic/text content that will be sent
@@ -64,7 +64,7 @@ angular.module('App.Home', [])
 
   //check if there is any pending.
   var userId = $window.localStorage.getItem('userId');
-  $scope.pendingCount = Pending.countPending(userId);
+  $scope.pendingCount = PendingFactory.countPending(userId);
   
 });
 

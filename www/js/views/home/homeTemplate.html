@@ -4,10 +4,10 @@
       Votally
     </h1>
     <ion-nav-buttons side="right">
-      <button class="button-clear" ng-click="routeToPending()">
+      <button class="button-clear" ng-click="routeToPending()" ng-show="pendingCount">
         Pending 
         <span class="badge badge-calm">
-          <i class="ion-paper-airplane"></i>
+          <!-- <i class="ion-paper-airplane"></i> -->
           {{pendingCount}}
         </span>
       </button>
