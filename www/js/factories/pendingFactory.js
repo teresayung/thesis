@@ -1,5 +1,5 @@
 angular.module('App.PendingFactory', [])
-.factory('PendingFactory',function(ServerRequests, ServerRoutes){
+.factory('PendingFactory', function(ServerRequests, ServerRoutes){
 
   var getPending = function(userId){
     return ServerRequests.post({ userId: userId }, ServerRoutes.getPending)
