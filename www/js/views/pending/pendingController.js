@@ -1,5 +1,5 @@
 angular.module('App.Pending', [])
-.controller('PendingController', function ($scope, $window, $location, ServerRequests, ServerRoutes, Auth) {
+.controller('PendingController', function ($scope, $window, $location, ServerRequests, ServerRoutes, PendingFactory, Auth) {
   
   //======================== helper functions ==============================
 
