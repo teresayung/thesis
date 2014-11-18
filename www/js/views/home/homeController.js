@@ -23,7 +23,7 @@ angular.module('App.Home', [])
       $location.path('/results');
     }
     if (direction === 'right'){
-      $location.path('/pending');
+      $location.path('/friends');
     }
   }
 
@@ -56,5 +56,9 @@ angular.module('App.Home', [])
         alert(error); 
       }, option);
   }
+
+  $scope.routeToPending = function(){
+    $location.path('/pending');
+  };
 });
 
