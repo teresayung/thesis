@@ -62,9 +62,12 @@ angular.module('App.Home', [])
       }, option);
   }
 
-  //check if there is any pending.
+  //check if there is any pending with the factory and set the count to pendingCount.
   var userId = $window.localStorage.getItem('userId');
-  $scope.pendingCount = PendingFactory.countPending(userId);
+  PendingFactory.countPending(userId)
+  .then(function(count){
+    $scope.pendingCount = count;
+  });
   
 });
 

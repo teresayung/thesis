@@ -2,7 +2,7 @@ angular.module('App.PendingFactory', [])
 .factory('PendingFactory',function(ServerRequests, ServerRoutes){
 
   var getPending = function(userId){
-    ServerRequests.post({ userId: userId }, ServerRoutes.getPending)
+    return ServerRequests.post({ userId: userId }, ServerRoutes.getPending)
     .then(function(response){
       //  response looks like...
       // {
@@ -24,7 +24,7 @@ angular.module('App.PendingFactory', [])
   };
 
   var countPending = function(userId){
-    ServerRequests.post({ userId: userId }, ServerRoutes.countPending)
+    return ServerRequests.post({ userId: userId }, ServerRoutes.countPending)
     .then(function(response){
       return response.count;
     })
