@@ -47,7 +47,6 @@ angular.module('App', [
   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
     //if the authenticate is set to true and the loggedIn status is false, route it cback to login view
     if(toState.authenticate && !(Auth.loggedIn() === 'true')){
-      console.log('route back to login');
       $state.transitionTo('login');
       event.preventDefault(); 
     }
