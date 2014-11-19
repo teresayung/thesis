@@ -10,11 +10,12 @@ angular.module('App.Home', [])
 .controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory) {
   //TODO Check if logged in and route accordingly
 
+  var userId = $window.localStorage.getItem('userId');
   //Holds the pic/text content that will be sent
   $scope.content = {
     topic: '',
     picture: '',
-    userId: 0
+    userId: userId
   }
 
   //sends to new routes when home page is swiped
@@ -63,7 +64,6 @@ angular.module('App.Home', [])
   }
 
   //check if there is any pending with the factory and set the count to pendingCount.
-  var userId = $window.localStorage.getItem('userId');
   PendingFactory.countPending(userId)
   .then(function(count){
     $scope.pendingCount = count;
