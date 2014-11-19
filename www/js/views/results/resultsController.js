@@ -7,23 +7,17 @@ angular.module('App.Results', [])
   console.log("are you in controller?");
 
   var userId = $window.localStorage.getItem('userId');
-  if(!Auth.loggedIn()){ // checks if the user is loggedIn
-    //Call a post request with the userId to the server to get a list of results with that userId 
-    //results are obtained before continuing
-    ServerRequests.post({userId: userId}, ServerRoutes.getResults).then(function(response){
-      //Expect the ServerRequest to output an array of contents
+  //Call a post request with the userId to the server to get a list of results with that userId 
+  //results are obtained before continuing
+  ServerRequests.post({userId: userId}, ServerRoutes.getResults).then(function(response){
+    //Expect the ServerRequest to output an array of contents
 
-       //the for loop is to make it so that the recent items are displayed first
-      $scope.results = [];
-      for(var recent = response.length - 1; recent >= 0 ; recent--){
-        $scope.results.push(response[recent]);
-      }
-    })
-  } else {
-    //user is not logged in
-    //route to login page
-    $location.path('/login')
-  }
+     //the for loop is to make it so that the recent items are displayed first
+    $scope.results = [];
+    for(var recent = response.length - 1; recent >= 0 ; recent--){
+      $scope.results.push(response[recent]);
+    }
+  })
 
 ///========= Testing the html ===============///
 
