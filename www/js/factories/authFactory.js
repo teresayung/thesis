@@ -72,13 +72,13 @@ angular.module('App.Auth', [])
   };
 
   var logout = function (userId) {
-    $window.localStorage.setItem('loggedIn', false);
-    $window.localStorage.setItem('userId', undefined);
-    $window.localStorage.setItem('token', undefined);
-    $location.path('/login');
     //Auth sends an http request to the database
     auth({userId: userId}, '/user/logout').then(function(){
     //When logout button is clicked, set local storage object to be loggedIn = false and userId = undefined 
+      $window.localStorage.setItem('loggedIn', false);
+      $window.localStorage.setItem('userId', undefined);
+      $window.localStorage.setItem('token', undefined);
+      $location.path('/login');
     }).catch(function(error){
       console.log('Unable to logout: ', error)
     });

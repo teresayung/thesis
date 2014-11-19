@@ -45,13 +45,12 @@ angular.module('App', [
 
   //TODO! Change the state for unauthenticated users
   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
-      if(toState.authenticate){
-        if(Auth.loggedIn() === 'false'){
-          $state.transitionTo('login');
-          event.preventDefault(); 
-        }
-      }
-    });
+    //if the authenticate is set to true and the loggedIn status is false, route it cback to login view
+    if(toState.authenticate && Auth.loggedIn() === 'false'){
+        $state.transitionTo('login');
+        event.preventDefault(); 
+    }
+  });
 })
 
 .config(function($compileProvider, $stateProvider, $urlRouterProvider) {
