@@ -45,12 +45,12 @@ angular.module('App', [
 
   //TODO! Change the state for unauthenticated users
   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
-      if (toState.authenticate && !Auth.isAuth()){
-        // User isn’t authenticated
-        $state.transitionTo('tab.account');
+    //if the authenticate is set to true and the loggedIn status is false, route it cback to login view
+    if(toState.authenticate && Auth.loggedIn() === 'false'){
+        $state.transitionTo('login');
         event.preventDefault(); 
-      }
-    });
+    }
+  });
 })
 
 .config(function($compileProvider, $stateProvider, $urlRouterProvider) {
@@ -94,7 +94,7 @@ angular.module('App', [
           controller: 'LoadingController'
         }
       },
-      authenticate:true
+      authenticate:false
     })
 
     .state('login', {
@@ -105,7 +105,7 @@ angular.module('App', [
           controller: 'LoginController'
         }
       },
-      // authenticate:true
+      authenticate:false
     })
 
     .state('pending', {
@@ -116,7 +116,7 @@ angular.module('App', [
           controller: 'PendingController'
         }
       },
-      // authenticate:true
+      authenticate:true
     })
 
     .state('receivers', {
@@ -138,7 +138,7 @@ angular.module('App', [
           controller: 'ResultsController'
         }
       },
-      // authenticate:true
+      authenticate:true
     })
 
     .state('settings', {
@@ -149,7 +149,7 @@ angular.module('App', [
           controller: 'SettingsController'
         }
       },
-      // authenticate:true
+      authenticate:true
     })
 
     .state('signup', {
@@ -160,7 +160,7 @@ angular.module('App', [
           controller: 'SignupController'
         }
       },
-      // authenticate:true
+      authenticate:false
     })
 
 

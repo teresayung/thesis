@@ -24,10 +24,6 @@ angular.module('App.Pending', [])
 
   //======================== initialize ==============================
 
-  // //if not loggedIn, send the user to logIn
-  // if(!Auth.loggedIn()){
-  //  $location.path('/logIn');
-  // }
   var contentId;
   var pendingList;
   //get the userId info from local storage and set it as a local variable

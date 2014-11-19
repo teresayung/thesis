@@ -68,7 +68,7 @@ angular.module('App.Auth', [])
   };
 
   var loggedIn = function () {
-    return !!$window.localStorage.getItem('loggedIn');
+    return $window.localStorage.getItem('loggedIn');
   };
 
   var logout = function (userId) {
