@@ -61,7 +61,8 @@ angular.module('App', [
 
   //Retrieves and overwrites the default regexp that is used to whitelist safe urls during img sanitization
   //Normalizes any url about to be used in img(src) and returns an absolute path
-  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  $compileProvider
+    .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
