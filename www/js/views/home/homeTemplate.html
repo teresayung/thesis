@@ -3,6 +3,14 @@
     <h1 class="title">
       Votally
     </h1>
+    <ion-nav-buttons side="left">
+      <button class="button-clear" ng-click="routeToFriends()" ng-show="friendRequests">
+        <span class="badge badge-energized">
+          <i class="ion-person-add"></i>
+        </span>
+        Friends
+      </button>
+    </ion-nav-buttons>
     <ion-nav-buttons side="right">
       <button class="button-clear" ng-click="routeToPending()" ng-show="pendingCount">
         Pending 
