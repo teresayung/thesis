@@ -108,4 +108,12 @@
   font-weight: bold;
 }
 
+/*============FOR ADD FRIENDS VIEW=============*/
+.friend-request {
+  padding-right: 12px;
+}
 
+/*.inline-button {
+  float: left;
+  clear: both;
+}*/
