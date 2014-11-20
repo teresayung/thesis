@@ -9,7 +9,7 @@ angular.module('App.Home', [])
 
 .controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory) {
 
-  //TODO Check if logged in and route accordingly
+  var userId = $window.localStorage.getItem('userId');
 
   //Holds the pic/text content that will be sent
   $scope.content = {
@@ -40,6 +40,7 @@ angular.module('App.Home', [])
       return;
     }
     else {
+      $scope.content.userId = userId;
       //sends content to be stored in ReceiversFactory
       ReceiversFactory.contentFromHome($scope.content);
       //sends user to receiver route
