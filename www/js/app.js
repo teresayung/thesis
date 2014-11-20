@@ -10,6 +10,8 @@
 angular.module('App', [
   'ionic', 
   //Controllers
+  'App.AddFriends',
+  'App.Friends',
   'App.Home',
   // 'App.Loading',
   'App.Login',
@@ -19,6 +21,8 @@ angular.module('App', [
   'App.Settings',
   'App.Signup',
   //Factories
+  'App.AddFriendsFactory',
+  'App.FriendsFactory',
   'App.ServerRequests',
   'App.ServerRoutes',
   'App.Auth',
@@ -65,16 +69,29 @@ angular.module('App', [
   // Each state's controller can be found in their respective Controller file in their view directory
   $stateProvider
 
-    //TODO Do we need this block?
-
-    // setup an abstract state for the tabs directive
-    // .state('tab', {
-    //   url: '/tab',
-    //   abstract: true,
-    //   templateUrl: 'templates/tabs.html',
-    // })
-
     // Each tab has its own nav history stack:
+    .state('addFriends', {
+      url: '/add-friends',
+      views: {
+        '': {
+          templateUrl: 'js/views/addFriends/addFriendsTemplate.html',
+          controller: 'AddFriendsController'
+        }
+      },
+      authenticate: true
+    })
+
+    .state('friends', {
+      url: '/friends',
+      views: {
+        '': {
+          templateUrl: 'js/views/friends/friendsTemplate.html',
+          controller: 'FriendsController'
+        }
+      },
+      authenticate: true
+    })
+
     .state('home', {
       url: '/',
       views: {
@@ -83,7 +100,7 @@ angular.module('App', [
           controller: 'HomeController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('loading', {
@@ -94,7 +111,7 @@ angular.module('App', [
           controller: 'LoadingController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
 
     .state('login', {
@@ -105,7 +122,7 @@ angular.module('App', [
           controller: 'LoginController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
 
     .state('pending', {
@@ -116,7 +133,7 @@ angular.module('App', [
           controller: 'PendingController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('receivers', {
@@ -127,7 +144,7 @@ angular.module('App', [
           controller: 'ReceiversController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
     
     .state('results', {
@@ -138,7 +155,7 @@ angular.module('App', [
           controller: 'ResultsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('settings', {
@@ -149,7 +166,7 @@ angular.module('App', [
           controller: 'SettingsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('signup', {
@@ -160,9 +177,8 @@ angular.module('App', [
           controller: 'SignupController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
