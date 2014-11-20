@@ -11,6 +11,7 @@ angular.module('App.ServerRoutes', [])
     getResults: '/results/getResults',
     getReceivers: '/receivers/getContacts',
     postContent: '/receivers/sendContent',
-    requestFriend: '/friends/requestFriend'
+    requestFriend: '/friends/requestFriend',
+    checkFriendRequest: '/friends/checkRequest'
   };
 });

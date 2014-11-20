@@ -7,7 +7,7 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory, AddFriendsFactory) {
 
   var userId = $window.localStorage.getItem('userId');
 
@@ -31,6 +31,11 @@ angular.module('App.Home', [])
   //clicking the pending button routes to pendingView 
   $scope.routeToPending = function(){
     $location.path('/pending');
+  };
+
+  //clicking the friend + button routes to addFriendsView 
+  $scope.routeToAddFriends = function(){
+    $location.path('/addFriends');
   };
 
   //sends to receivers when Send button is pushed
@@ -64,10 +69,16 @@ angular.module('App.Home', [])
       }, option);
   }
 
-   //check if there is any pending with the factory and set the count to pendingCount.
+  //check if there is any pending with the factory and set the count to pendingCount.
   PendingFactory.countPending(userId)
   .then(function(count){
     $scope.pendingCount = count;
+  });
+
+  //check if there is any friend requests with the factory and set the boolean to .
+  AddFriendsFactory.checkRequest(userId)
+  .then(function(count){
+    $scope.hasfriendRequests = count;
   });
 });
 
