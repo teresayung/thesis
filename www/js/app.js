@@ -80,7 +80,7 @@ angular.module('App', [
           controller: 'AddFriendsController'
         }
       },
-      authenticate: true
+      //authenticate: true
     })
 
     .state('friends', {
@@ -91,7 +91,7 @@ angular.module('App', [
           controller: 'FriendsController'
         }
       },
-      authenticate: true
+      //authenticate: true
     })
 
     .state('home', {
@@ -102,7 +102,7 @@ angular.module('App', [
           controller: 'HomeController'
         }
       },
-      authenticate: true
+      //authenticate: true
     })
 
     .state('loading', {
