@@ -80,20 +80,6 @@
 
 /*============FOR RESULTS VIEW TEMPLATE=============*/
 
-.topic {
-  display: block;
-}
-.pictureframe{
-  display: inline;
-  float: left;
-}
-.votes {
-  display: inline;
-  float: left;
-}
-
-/*graph */
-
 .bargraph {
     list-style: none;
     padding-top: 20px;
@@ -120,6 +106,19 @@ background: #EF465B;
 ul.bargraph li.greenbright {
 background: #36B669;
 /*width:40%;*/
+}
+
+.centertext {
+  text-align: center;
+}
+
+.lefttext {
+  text-align: left;
+}
+.pictureframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 
