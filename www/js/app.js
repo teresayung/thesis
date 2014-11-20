@@ -78,7 +78,7 @@ angular.module('App', [
           controller: 'AddFriendsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('friends', {
@@ -89,7 +89,7 @@ angular.module('App', [
           controller: 'FriendsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('home', {
@@ -100,7 +100,7 @@ angular.module('App', [
           controller: 'HomeController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('loading', {
@@ -111,7 +111,7 @@ angular.module('App', [
           controller: 'LoadingController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
 
     .state('login', {
@@ -122,7 +122,7 @@ angular.module('App', [
           controller: 'LoginController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
 
     .state('pending', {
@@ -133,7 +133,7 @@ angular.module('App', [
           controller: 'PendingController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('receivers', {
@@ -144,7 +144,7 @@ angular.module('App', [
           controller: 'ReceiversController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
     
     .state('results', {
@@ -155,7 +155,7 @@ angular.module('App', [
           controller: 'ResultsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('settings', {
@@ -166,7 +166,7 @@ angular.module('App', [
           controller: 'SettingsController'
         }
       },
-      authenticate:true
+      authenticate: true
     })
 
     .state('signup', {
@@ -177,7 +177,7 @@ angular.module('App', [
           controller: 'SignupController'
         }
       },
-      authenticate:false
+      authenticate: false
     })
 
   // if none of the above states are matched, use this as the fallback
