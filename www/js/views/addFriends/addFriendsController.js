@@ -22,7 +22,6 @@ angular.module('App.AddFriends', [])
 
   //make a friend request
   $scope.makeRequest = function(friendName){
-    console.log("this is working")
     ServerRequests.post({username: friendName}, ServerRoutes.requestFriend)
       .then(function(response){
         $scope.requestResponse = response;
@@ -40,9 +39,8 @@ angular.module('App.AddFriends', [])
   //getRequest
   //addFriend
   //confirmFriend
-
   $scope.getPendingRequests = function(){
-    ServerRequests.post({userId: userId}, ServerRoutes.getRequest)
+    ServerRequests.post({userId: userId}, ServerRoutes.checkFriendRequest)
       .then(function(response){
         $scope.allRequests = response.requests;
       })
