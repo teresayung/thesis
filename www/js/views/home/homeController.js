@@ -78,7 +78,7 @@ angular.module('App.Home', [])
   //check if there is any friend requests with the factory and set the boolean to .
   AddFriendsFactory.checkRequest(userId)
   .then(function(count){
-    $scope.hasFriendRequests = count;
+    $scope.hasFriendRequest = count;
   });
 });
 
