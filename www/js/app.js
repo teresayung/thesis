@@ -10,6 +10,8 @@
 angular.module('App', [
   'ionic', 
   //Controllers
+  'App.AddFriends',
+  'App.Friends',
   'App.Home',
   // 'App.Loading',
   'App.Login',
@@ -19,6 +21,8 @@ angular.module('App', [
   'App.Settings',
   'App.Signup',
   //Factories
+  'App.AddFriendsFactory',
+  'App.FriendsFactory',
   'App.ServerRequests',
   'App.ServerRoutes',
   'App.Auth',
@@ -65,16 +69,29 @@ angular.module('App', [
   // Each state's controller can be found in their respective Controller file in their view directory
   $stateProvider
 
-    //TODO Do we need this block?
-
-    // setup an abstract state for the tabs directive
-    // .state('tab', {
-    //   url: '/tab',
-    //   abstract: true,
-    //   templateUrl: 'templates/tabs.html',
-    // })
-
     // Each tab has its own nav history stack:
+    .state('addFriends', {
+      url: '/add-friends',
+      views: {
+        '': {
+          templateUrl: 'js/views/addFriends/addFriendsTemplate.html',
+          controller: 'AddFriendsController'
+        }
+      },
+      authenticate:true
+    })
+
+    .state('friends', {
+      url: '/friends',
+      views: {
+        '': {
+          templateUrl: 'js/views/friends/friendsTemplate.html',
+          controller: 'FriendsController'
+        }
+      },
+      authenticate:true
+    })
+
     .state('home', {
       url: '/',
       views: {
@@ -162,7 +179,6 @@ angular.module('App', [
       },
       authenticate:false
     })
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
