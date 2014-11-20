@@ -2,6 +2,9 @@ angular.module('App.AddFriendsFactory', [])
 
 .factory('AddFriendsFactory', function(){
 
+  var checkRequest = function(userId){
+    
+  };
   return {
     getSentenceEnd: function(requests){
       if (requests === 0){
@@ -13,7 +16,8 @@ angular.module('App.AddFriendsFactory', [])
       if (requests > 1){
         return 'requests!';
       }
-    }
+    },
+    checkRequest: checkRequest
 
   };
 });
