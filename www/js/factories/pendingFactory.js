@@ -23,20 +23,8 @@ angular.module('App.PendingFactory', [])
     
   };
 
-  var countPending = function(userId){
-    return ServerRequests.post({ userId: userId }, ServerRoutes.countPending)
-    .then(function(response){
-      return response.count;
-    })
-    //if there is an error getting the pendings, console an error.
-    .catch(function(error){
-      console.error(error);
-    });
-  };
-
   return {
-    getPending: getPending,
-    countPending: countPending
+    getPending: getPending
   };
 
 });
