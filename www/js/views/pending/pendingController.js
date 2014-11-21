@@ -45,7 +45,7 @@ angular.module('App.Pending', [])
     })
     //if there is an error getting the pendings, console an error.
     .catch(function(error){
-      console.error(error);
+      console.log(error);
     });
 
   //======================== click function ==============================
@@ -64,7 +64,7 @@ angular.module('App.Pending', [])
       })
       //if there is an error on voting, console an error.
       .catch(function(error){
-        console.error(error);
+        console.log(error);
       });
   };
 

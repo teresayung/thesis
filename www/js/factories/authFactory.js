@@ -15,7 +15,7 @@ angular.module('App.Auth', [])
     })
     //if error in the process, console it 
     .catch(function(error){
-      console.error(error);
+      console.log(error);
     });
   };
   

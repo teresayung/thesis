@@ -18,7 +18,7 @@ angular.module('App.PendingFactory', [])
     })
     //if there is an error getting the pendings, console an error.
     .catch(function(error){
-      console.error(error);
+      console.log(error);
     });
     
   };

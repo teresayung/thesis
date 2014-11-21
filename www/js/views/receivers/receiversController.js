@@ -49,7 +49,7 @@ angular.module('App.Receivers', [])
         $scope.allReceivers = response.receivers;
       })
       .catch(function(error){
-          console.error(error);
+          console.log(error);
       });
   }
 
