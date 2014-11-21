@@ -21,7 +21,7 @@ angular.module('App.AddFriends', [])
       })
       .catch(function(error){
         $scope.requestResponse = 'There was an error with your Friend Request'
-          console.error(error);
+          console.log(error);
       });
   }
 
