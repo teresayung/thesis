@@ -74,6 +74,7 @@ angular.module('App.Home', [])
   .then(function(data){
     $scope.pendingCount = data.pendingCount;
     $scope.hasFriendRequest = data.friendRequestCount;
+    $scope.resultCompleteCount = data.resultCompleteCount;
   });
 
 });
