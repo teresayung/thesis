@@ -7,7 +7,7 @@ angular.module('App.Home', [])
     .imgSrcSanitizationWhitelist(/^\s*(https?|blob|cdvfile|content|ftp|mailto|file|tel):|data:image\//);
 })
 
-.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, PendingFactory, AddFriendsFactory) {
+.controller('HomeController', function($scope, $location, $window, ReceiversFactory, Auth, Camera, HomeFactory) {
 
   var userId = $window.localStorage.getItem('userId');
 
