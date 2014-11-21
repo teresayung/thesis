@@ -26,6 +26,7 @@ angular.module('App', [
   'App.ServerRequests',
   'App.ServerRoutes',
   'App.Auth',
+  'App.HomeFactory',
   'App.Camera',
   'App.Directives',
   'App.ReceiversFactory',
