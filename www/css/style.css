@@ -41,47 +41,6 @@
   height: 55px;
 }
 
-*{
-  font-family: 'Josefin Sans', sans-serif;
-  color: #35404F;
-  font-weight: bold;
-}
-
-.votally-red{
-  color: #DB3340;
-}
-
-.votally-green{
-  color: #1FDA9A;
-}
-
-.votally-blue{
-  color: #35404F;
-}
-
-.votally-cream{
-  color: #F7EAC8;
-}
-
-.votally-back-red{
-  background-color: #DB3340;
-}
-
-.votally-back-green{
-  background-color: #1FDA9A;
-}
-
-.votally-back-blue{
-  background-color: #35404F;
-}
-
-.votally-back-cream{
-  background-color: #F7EAC8;
-}
-
-.bar-footer{
-  height: 55px;
-}
 
 .shutter{
   font-size: 40px;
@@ -130,21 +89,33 @@
 
 .senderName{
   text-align: center;
+  margin: 20px;
   padding: 10px;
   height: 34px;
   font-size: 30px;
 }
 
-.pendingContent{
-  background-color: white;
+.pendigPolaroid{
+  margin: 30px;
 }
 
-.polaroid-text{
-  text-align: center;
-  font-size: 24px;
-
+#pending-skip{
+  font-family: 'Josefin Sans', sans-serif;
 }
 
+.pending-button{
+  font-family: 'Josefin Sans', sans-serif !important;
+  /*color: #35404F !important;*/
+  font-weight: bold !important;
+}
+
+.no-button{
+  color: #DB3340 !important;
+}
+
+.yes-button{
+  color: #1FDA9A !important;
+}
 /*============FOR RECEIVERS VIEW TEMPLATE=============*/
 .selected {
   background-color: #000;
