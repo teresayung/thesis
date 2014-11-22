@@ -26,6 +26,50 @@ angular.module('App.Pending', [])
 
   var contentId;
   var pendingList;
+  //get the userId info from local storage and set it as a local variable
+  var userId = $window.localStorage.getItem('userId');
+
+  //get all the pendings for the user
+  PendingFactory.getPending(userId)
+    .then(function(contents){
+      //  contents looks like...
+      //  [{
+      //    contentId: number,
+      //    topic: string,
+      //    picture: undefined(url?)
+      //    userId: number,
+      //    userName: string
+      //  }, {}, ...]
+      pendingList = contents;
+      checkPending();
+    })
+    //if there is an error getting the pendings, console an error.
+    .catch(function(error){
+      console.log(error);
+    });
+
+  //======================== click function ==============================
+
+  $scope.sendVote = function(vote){
+    var result = {
+      'userId': userId,
+      'contentId': contentId,
+      'vote': vote
+    };
+
+    ServerRequests.post(result, ServerRoutes.sendVote)
+      .then(function(){
+        pendingList.shift();
+        checkPending();
+      })
+      //if there is an error on voting, console an error.
+      .catch(function(error){
+        console.log(error);
+      });
+  };
+
+});
+
 // ======================= fake data ============================
    pendingList = [
      { contentId: 1,
@@ -54,47 +98,3 @@ angular.module('App.Pending', [])
        userId: 400,
        username: 'Satoko' }
    ];
-  //get the userId info from local storage and set it as a local variable
-  var userId = $window.localStorage.getItem('userId');
-
-  //get all the pendings for the user
-  // PendingFactory.getPending(userId)
-    // .then(function(contents){
-      //  contents looks like...
-      //  [{
-      //    contentId: number,
-      //    topic: string,
-      //    picture: undefined(url?)
-      //    userId: number,
-      //    userName: string
-      //  }, {}, ...]
-      // pendingList = contents;
-      checkPending();
-    // })
-    // //if there is an error getting the pendings, console an error.
-    // .catch(function(error){
-    //   console.log(error);
-    // });
-
-  //======================== click function ==============================
-
-  $scope.sendVote = function(vote){
-    var result = {
-      'userId': userId,
-      'contentId': contentId,
-      'vote': vote
-    };
-
-    ServerRequests.post(result, ServerRoutes.sendVote)
-      .then(function(){
-        pendingList.shift();
-        checkPending();
-      })
-      //if there is an error on voting, console an error.
-      .catch(function(error){
-        console.log(error);
-      });
-  };
-
-});
-
