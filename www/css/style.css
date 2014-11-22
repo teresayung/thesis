@@ -41,6 +41,15 @@
   height: 55px;
 }
 
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.bar-footer{
+  height: 55px;
+
+}
+
 .shutter{
   font-size: 40px;
   color: #aaa;
