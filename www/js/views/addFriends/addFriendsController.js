@@ -13,9 +13,6 @@ angular.module('App.AddFriends', [])
   //set default amount of pending friend requests
   $scope.requestersAmount = 0;
 
-  //determine the proper sentence ending for the amount of friend requests
-  // $scope.sentenceEnd = AddFriendsFactory.getSentenceEnd($scope.requestersAmount);
-
   //set default response to an attempt to add a friend
   $scope.requestResponse = '';
 
@@ -44,12 +41,13 @@ angular.module('App.AddFriends', [])
   $scope.getPendingRequests = function(){
     ServerRequests.post({userId: userId}, ServerRoutes.checkFriendRequest)
       .then(function(response){
+        //determine the proper sentence ending for the amount of friend requests
         $scope.allRequesters = response.friendRequesters;
         $scope.requestersAmount = $scope.allRequesters.length;
         $scope.sentenceEnd = AddFriendsFactory.getSentenceEnd($scope.requestersAmount);
       })
       .catch(function(error){
-          console.error(error);
+          console.log(error);
       });
   }
   $scope.getPendingRequests();
@@ -64,7 +62,7 @@ angular.module('App.AddFriends', [])
         console.log($scope.allRequesters);
       })
       .catch(function(error){
-          console.error(error);
+          console.log(error);
       });
   }
 
@@ -78,7 +76,7 @@ angular.module('App.AddFriends', [])
         console.log($scope.allRequesters);
       })
       .catch(function(error){
-          console.error(error);
+          console.log(error);
       });
   }
 
