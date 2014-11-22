@@ -14,7 +14,7 @@
 	</ion-content>
 			
 	<!-- ================ FOOTER ================-->
-	<ion-footer-bar class="bar bar-footer votally-back-cream">
+	<ion-footer-bar class="bar bar-footer votally-back-cream" on-swipe-up="sendVote(0)">
 		<!-- ================ BUTTONS for NO/SKIP/YES ================-->
 		<button class="button button-clear pending-button no-button" ng-click="sendVote(-1)">
 			<i class="icon ion-ios7-paw vote-no votally-red"></i> NO

@@ -105,7 +105,6 @@
 
 .pending-button{
   font-family: 'Josefin Sans', sans-serif !important;
-  /*color: #35404F !important;*/
   font-weight: bold !important;
 }
 
@@ -116,6 +115,7 @@
 .yes-button{
   color: #1FDA9A !important;
 }
+
 /*============FOR RECEIVERS VIEW TEMPLATE=============*/
 .selected {
   background-color: #000;
@@ -162,7 +162,6 @@
   font-weight: bold;
 }
 
-<<<<<<< HEAD
 /*============FOR ADD FRIENDS VIEW=============*/
 .friend-request {
   padding-right: 12px;
@@ -173,8 +172,4 @@
   float: left;
   clear: both;
 }*/
-=======
 
-
-
->>>>>>> (feat) delete poraloids css
