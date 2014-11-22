@@ -9,6 +9,11 @@ angular.module('App.ServerRoutes', [])
     sendVote: '/pending/sendVote',
     getResults: '/results/getResults',
     getReceivers: '/receivers/getContacts',
-    postContent: '/receivers/sendContent'
+    postContent: '/receivers/sendContent',
+    checkUpdates: '/home/checkUpdates'
+    checkFriendRequest: '/friends/checkRequest',
+    requestFriend: '/friends/requestFriend',
+    confirmFriend: '/friends/confirmFriend',
+    declineFriend: '/friends/declineFriend'
   };
 });

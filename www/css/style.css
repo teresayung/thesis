@@ -1,4 +1,45 @@
 /* Empty. Add your own CSS if you like */
+*{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #35404F;
+  font-weight: bold;
+}
+
+.votally-red{
+  color: #DB3340;
+}
+
+.votally-green{
+  color: #1FDA9A;
+}
+
+.votally-blue{
+  color: #35404F;
+}
+
+.votally-cream{
+  color: #F7EAC8;
+}
+
+.votally-back-red{
+  background-color: #DB3340;
+}
+
+.votally-back-green{
+  background-color: #1FDA9A;
+}
+
+.votally-back-blue{
+  background-color: #35404F;
+}
+
+.votally-back-cream{
+  background-color: #F7EAC8;
+}
+
+.bar-footer{
+  height: 55px;
+}
 
 .shutter{
   font-size: 40px;
@@ -91,3 +132,29 @@
   display: inline;
   float: left;
 }
+
+/*============FOR SETTINGS VIEW=============*/
+
+.highlight {
+  background-color: #888;
+  color: #fff;
+  font-weight: bold;
+}
+.settings {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 30px;
+  background-color: #f5f5f5;
+  color: #222;
+  font-weight: bold;
+}
+
+/*============FOR ADD FRIENDS VIEW=============*/
+.friend-request {
+  padding-right: 12px;
+}
+
+/*.inline-button {
+  float: left;
+  clear: both;
+}*/
