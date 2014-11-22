@@ -43,11 +43,44 @@
 
 *{
   font-family: 'Josefin Sans', sans-serif;
+  color: #35404F;
+  font-weight: bold;
+}
+
+.votally-red{
+  color: #DB3340;
+}
+
+.votally-green{
+  color: #1FDA9A;
+}
+
+.votally-blue{
+  color: #35404F;
+}
+
+.votally-cream{
+  color: #F7EAC8;
+}
+
+.votally-back-red{
+  background-color: #DB3340;
+}
+
+.votally-back-green{
+  background-color: #1FDA9A;
+}
+
+.votally-back-blue{
+  background-color: #35404F;
+}
+
+.votally-back-cream{
+  background-color: #F7EAC8;
 }
 
 .bar-footer{
   height: 55px;
-
 }
 
 .shutter{
@@ -162,6 +195,7 @@
 .friend-request {
   padding-right: 12px;
 }
+
 
 /*.inline-button {
   float: left;

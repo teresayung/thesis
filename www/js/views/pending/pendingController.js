@@ -26,12 +26,40 @@ angular.module('App.Pending', [])
 
   var contentId;
   var pendingList;
+// ======================= fake data ============================
+   pendingList = [
+     { contentId: 1,
+       topic: 'This owl beanie for Rich?',
+       data: 'http://assets.inhabitots.com/wp-content/uploads/2013/11/adorable-cozy-owl-hat-537x365.jpg',
+       userId: 100,
+       username: 'Teresa' },
+     { contentId: 2,
+       topic: 'for lunch?',
+       data: 'http://www.scmp.com/sites/default/files/styles/980w/public/2013/07/31/turtle-burger-l.jpg?itok=SfyO-6l_',
+       userId: 200,
+       username: 'Bace' },
+     { contentId: 3,
+       topic: 'still grumpy?',
+       data: 'http://i.imgur.com/Cxagv.jpg',
+       userId: 300,
+       username: 'Rich' },
+     { contentId: 4,
+       topic: 'wanna play?',
+       data: 'http://icons.iconarchive.com/icons/yellowicon/game-stars/256/Mario-icon.png',
+       userId: 400,
+       username: 'Satoko' },
+     { contentId: 5,
+       topic: 'mall?',
+       data: 'http://www.thespicehut.com/Assets/bubble-tea-bellingham.jpg',
+       userId: 400,
+       username: 'Satoko' }
+   ];
   //get the userId info from local storage and set it as a local variable
   var userId = $window.localStorage.getItem('userId');
 
   //get all the pendings for the user
-  PendingFactory.getPending(userId)
-    .then(function(contents){
+  // PendingFactory.getPending(userId)
+    // .then(function(contents){
       //  contents looks like...
       //  [{
       //    contentId: number,
@@ -40,13 +68,13 @@ angular.module('App.Pending', [])
       //    userId: number,
       //    userName: string
       //  }, {}, ...]
-      pendingList = contents;
+      // pendingList = contents;
       checkPending();
-    })
-    //if there is an error getting the pendings, console an error.
-    .catch(function(error){
-      console.log(error);
-    });
+    // })
+    // //if there is an error getting the pendings, console an error.
+    // .catch(function(error){
+    //   console.log(error);
+    // });
 
   //======================== click function ==============================
 
@@ -70,31 +98,3 @@ angular.module('App.Pending', [])
 
 });
 
-//======================= fake data ============================
-//    pendingList = [
-//      { contentId: 1,
-//        topic: 'This owl beanie for Rich?',
-//        picture: 'http://assets.inhabitots.com/wp-content/uploads/2013/11/adorable-cozy-owl-hat-537x365.jpg',
-//        userId: 100,
-//        userName: 'Teresa' },
-//      { contentId: 2,
-//        topic: 'for lunch?',
-//        picture: 'http://www.scmp.com/sites/default/files/styles/980w/public/2013/07/31/turtle-burger-l.jpg?itok=SfyO-6l_',
-//        userId: 200,
-//        userName: 'Bace' },
-//      { contentId: 3,
-//        topic: 'still grumpy?',
-//        picture: 'http://i.imgur.com/Cxagv.jpg',
-//        userId: 300,
-//        userName: 'Rich' },
-//      { contentId: 4,
-//        topic: 'wanna play?',
-//        picture: 'http://icons.iconarchive.com/icons/yellowicon/game-stars/256/Mario-icon.png',
-//        userId: 400,
-//        userName: 'Satoko' },
-//      { contentId: 5,
-//        topic: 'mall?',
-//        picture: 'http://www.thespicehut.com/Assets/bubble-tea-bellingham.jpg',
-//        userId: 400,
-//        userName: 'Satoko' }
-//    ];
