@@ -25,10 +25,20 @@
 
       <!-- List of all pending friend requests -->
       <ion-item class="item-divider">
-        You have {{requestsAmount}} pending friend {{sentenceEnd}}
+        You have {{requestersAmount}} pending friend {{sentenceEnd}}
       </ion-item>
-      <ion-item ng-repeat="request in allRequests">
-          {{request.username}}
+      <ion-item ng-repeat="requester in allRequesters">
+          {{requester.requesterName}}
+          <button class="button button-balanced button-small"
+                  type="button"
+                  ng-click = "acceptFriend(requester.requesterId, $index)">
+            Accept
+          </button>
+          <button class="button button-assertive button-small"
+                  type="button"
+                  ng-click = "declineFriend(requester.requesterId, $index)">
+            Decline
+          </button>
       </ion-item>
     </ion-list>
   </ion-content>
