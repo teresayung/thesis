@@ -38,6 +38,11 @@ angular.module('App.Home', [])
     $location.path('/addFriends');
   };
 
+  //clicking the result button routes to resultsView 
+  $scope.routeToResults = function(){
+    $location.path('/results');
+  };
+
   //sends to receivers when Send button is pushed
   $scope.send = function(){
     //if there is no picture and no message, do nothing
