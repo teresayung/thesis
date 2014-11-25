@@ -498,9 +498,7 @@ body {
   background: -ms-radial-gradient(center, ellipse cover,  #ffeb95 0%,#ffd576 90%);
   background: radial-gradient(ellipse at center,  #ffeb95 0%,#ffd576 90%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb95', endColorstr='#ffd576',GradientType=1 );
-  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 0.9em;
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
