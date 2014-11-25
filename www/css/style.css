@@ -96,6 +96,10 @@
     outline: none;
 }
 
+.home-footer button{
+  margin:0 30px 10px 30px;
+  width: 60px;
+}
 
 /*============FOR PENDING VIEW TEMPLATE=============*/
 
