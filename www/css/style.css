@@ -769,7 +769,8 @@ body {
 
 /*============FOR LOGIN & SIGNUP VIEW=============*/
 .login-logo, .signup-logo{
-  margin: 20px 20%;
+  margin: 20px;
+  text-align: center;
 }
 
 .login-form input, .signup-form input{
