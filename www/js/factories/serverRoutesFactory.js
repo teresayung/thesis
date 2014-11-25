@@ -4,7 +4,6 @@ angular.module('App.ServerRoutes', [])
   //return an object of the routes
   return {
   	//change the routes once our server is deployed.
-    sendContent: 'http://votallyserve.azurewebsites.net/receivers/sendContent',
     getPending: 'http://votallyserve.azurewebsites.net/pending/getPending',
     sendVote: 'http://votallyserve.azurewebsites.net/pending/sendVote',
     getResults: 'http://votallyserve.azurewebsites.net/results/getResults',
