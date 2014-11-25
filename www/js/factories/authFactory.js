@@ -26,7 +26,7 @@ angular.module('App.Auth', [])
       password: password
     };
     //change the routes once our server is deployed.
-    return auth(userInfo, '/user/login')
+    return auth(userInfo, 'http://votallyserve.azurewebsites.net/user/login')
       .then(function(response){
         if(response.error){
           //if there is an error property in the response, return the error
