@@ -67,6 +67,8 @@
 }
 
 .home-polaroid div{
+  position: relative;
+  overflow: hidden;
   background: #fff;
   margin: 0 10px 20px 10px;
   padding: 10px 10px 20px 10px;
@@ -78,7 +80,7 @@
   width: 100%;
   background-color: #000;
   display: block;
-  height: 300px;
+  height: 360px;
   margin: 10px 10px 10px 0px;
 }
 
@@ -96,6 +98,14 @@
     outline: none;
 }
 
+.home-footer{
+  height: 70px;
+}
+
+.home-footer button{
+  margin:0 30px 30px 30px;
+  width: 60px;
+}
 
 /*============FOR PENDING VIEW TEMPLATE=============*/
 
