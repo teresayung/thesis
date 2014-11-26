@@ -192,7 +192,7 @@ a img.last {
 }
 
 .polaroid_box {
-  margin:20px 0 0px 25px;
+  margin:20px 0px 0px 0px;
 }
 
 ul.polaroids {
@@ -200,7 +200,7 @@ ul.polaroids {
   margin: 0px 0px 18px 0px;
   /*float: left;*/
   list-style: none;
-  padding: 20px;
+  /*padding: 20px;*/
 }
 li.polaroids {
   display: block;
@@ -209,9 +209,9 @@ li.polaroids {
   background: #fff;
   display: block;
   float: left;
-  margin: 0 0 27px 30px;
+  margin: 0 0 15px 10px;
   width: auto;
-  padding: 10px 10px 15px;
+  /*padding: 10px 10px 15px;*/
   text-align: center;
   font-family: "Marker Felt", sans-serif;
   text-decoration: none;
@@ -265,14 +265,7 @@ li.polaroids {
   top: 3px;
 }
 
-li.polaroids  a:hover{
-  -webkit-transform: scale(1.15);
-  -moz-transform: scale(1.15);
-  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
-  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
-  position: relative;
-  z-index: 5;
-}
+
 
 .polaroidframe {
   clear:left ;
