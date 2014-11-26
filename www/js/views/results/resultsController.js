@@ -33,6 +33,7 @@ angular.module('App.Results', [])
     95: 'resultsbar pct-95 inner',
     100: 'resultsbar pct-100 inner'
   }
+
   var userId = $window.localStorage.getItem('userId');
   //Call a post request with the userId to the server to get a list of results with that userId 
   //results are obtained before continuing
@@ -46,35 +47,42 @@ angular.module('App.Results', [])
       }
       console.log($scope.results);
 
-
-
       for(var recent = response.length - 1; recent >= 0 ; recent--){
-    //set correct stamp
-    if(response[recent].yes > response[recent].no){
-      response[recent].stamp = '../../img/yesstamp.png'
-    } else{
-      response[recent].stamp = '../../img/nostamp.png'
-    }
+        //set correct stamp
+        if(response[recent].yes > response[recent].no){
+          response[recent].stamp = './img/yesstamp.png'
+        } else{
+          response[recent].stamp = './img/nostamp.png'
+        }
 
-    var yesPercent =(response[recent].yes /(response[recent].yes + response[recent].no)) *100;
-    var noPercent =(response[recent].no /(response[recent].yes + response[recent].no)) * 100;
-    
-    var yesPercentRounded = 5 * Math.round(yesPercent/5);
-    var noPercentRounded = 5 * Math.round(noPercent/5);
+        var yesPercent =(response[recent].yes /(response[recent].yes + response[recent].no)) *100;
+        var noPercent =(response[recent].no /(response[recent].yes + response[recent].no)) * 100;
+        
+        var yesPercentRounded = 5 * Math.round(yesPercent/5);
+        var noPercentRounded = 5 * Math.round(noPercent/5);
 
-    console.log(yesPercentRounded, noPercentRounded, "percentages")
+        console.log(yesPercentRounded, noPercentRounded, "percentages")
 
-    response[recent].yesbarclass = classes[yesPercentRounded];
-    response[recent].nobarclass = classes[noPercentRounded];
-    
+        response[recent].yesbarclass = classes[yesPercentRounded];
+        response[recent].nobarclass = classes[noPercentRounded];
+        
+        $scope.results.push(response[recent]);
 
-    $scope.results.push(response[recent]);
-
-    }})
+      }
+    })
     .catch(function(error){
       console.log(error);
     })
+
+  $scope.routeToHome = function(){
+    $location.path('/')
+  }
   
+  $scope.routeToSettings = function(){
+    $location.path('/settings')
+  }
+})
+
 
 ///========= Testing the html ===============///
 
@@ -110,14 +118,6 @@ angular.module('App.Results', [])
     
 //     console.log(results, "results")
   // }
-
-  $scope.routeToHome = function(){
-    $location.path('/')
-  }
-  $scope.routeToSettings = function(){
-    $location.path('/settings')
-  }
-})
 
 
 
