@@ -8,7 +8,6 @@ angular.module('App.Signup', [])
     $scope.signupError;
 
   	$scope.signUp = function (username, password, email) {
-      console.log(username, password, email)
   		Auth.signup(username, password, email)
   		.then(function (error){
         //if there is a error message from the server, show it to the user
