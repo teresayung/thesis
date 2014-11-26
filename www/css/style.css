@@ -551,7 +551,7 @@ body {
 }
 
 #apps p {
-  padding: 10.5px 0;
+  padding: 5px 0;
   position: relative;
   text-align: right;
   z-index: 2;
@@ -571,8 +571,8 @@ body {
     left: -0.30%;
 }
 
-#scale p.two { left: 49%; }
-#scale p.four { left: 99%; }
+#scale p.two { left: 45%; }
+#scale p.four { left: 89%; }
 
 .grid {
   border-left: 1px dotted #e8ab6a;
@@ -741,10 +741,6 @@ body {
 
 .v-divider.one { right: 75%; }
 .v-divider.two { right: 50%; }
-
-
-
-
 
 
 /*============FOR SETTINGS VIEW=============*/
