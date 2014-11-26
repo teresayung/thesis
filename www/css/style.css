@@ -324,6 +324,15 @@ li.polaroids  a:hover{
 @import url(http://fonts.googleapis.com/css?family=Oswald:700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
+@-keyframes grow-100{
+   from { right: 100%; }
+   to   { right: 0%; }
+}
+
+@-webkit-keyframes grow-100{
+   from { right: 100%; }
+   to   { right: 0%; }
+
 @-keyframes grow-95{
    from { right: 100%; }
    to   { right: 5%; }
@@ -568,9 +577,7 @@ body {
     left: -0.30%;
 }
 
-#scale p.one { left: 24%; }
 #scale p.two { left: 49%; }
-#scale p.three { left: 74%; }
 #scale p.four { left: 99%; }
 
 .grid {
@@ -600,6 +607,12 @@ body {
 }
 
 /*Bar length classes*/
+
+.resultsbar.pct-100 .inner {  
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: grow-100;
+  right: 0%;
+}
 
 .resultsbar.pct-95 .inner {  
   -webkit-animation-duration: 2s;
