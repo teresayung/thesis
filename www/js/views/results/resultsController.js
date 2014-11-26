@@ -39,13 +39,10 @@ angular.module('App.Results', [])
   //results are obtained before continuing
   ServerRequests.post({ userId: userId }, ServerRoutes.getResults)
     .then(function(response){
+      console.log(response.length);
     //Expect the ServerRequest to output an array of contents
     //the for loop is to make it so that the recent items are displayed first
       $scope.results = [];
-      for(var recent = response.length - 1; recent >= 0 ; recent--){
-        $scope.results.push(response[recent]);
-      }
-      console.log($scope.results);
 
       for(var recent = response.length - 1; recent >= 0 ; recent--){
         //set correct stamp
